@@ -1,0 +1,688 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mondial
+  SYSTEM "mondial.dtd">
+<mondial>
+   <country car_code="AL"
+            area="28750"
+            capital="cty-Albania-Tirane"
+            memberships="org-BSEC org-CEI org-CD org-SELEC org-CE org-EAPC org-EBRD org-EITI org-FAO org-IPU org-IAEA org-IBRD org-ICC org-ICAO org-ICCt org-Interpol org-IDA org-IFRCS org-IFC org-IFAD org-ILO org-IMO org-IMF org-IOC org-IOM org-ISO org-OIF org-ITU org-ITUC org-IDB org-MIGA org-NATO org-OSCE org-OPCW org-OAS org-OIC org-PCA org-UN org-UNCTAD org-UNESCO org-UNIDO org-UPU org-WCO org-WFTU org-WHO org-WIPO org-WMO org-UNWTO org-WTO">
+      <name>Albania</name>
+      <population measured="est." year="1950">1214489</population>
+      <population measured="est." year="1960">1618829</population>
+      <population measured="est." year="1970">2138966</population>
+      <population measured="est." year="1980">2734776</population>
+      <population measured="est." year="1990">3446882</population>
+      <population year="1997">3249136</population>
+      <population measured="est." year="2000">3304948</population>
+      <population year="2001" measured="census">3069275</population>
+      <population year="2011" measured="census">2800138</population>
+      <population_growth>0.3</population_growth>
+      <infant_mortality>13.19</infant_mortality>
+      <gdp_total>12800</gdp_total>
+      <gdp_agri>19.5</gdp_agri>
+      <gdp_ind>12</gdp_ind>
+      <gdp_serv>68.5</gdp_serv>
+      <inflation>1.7</inflation>
+      <unemployment>16.9</unemployment>
+      <indep_date from="Ottoman Empire">1912-11-28</indep_date>
+      <government>parliamentary democracy</government>
+      <encompassed continent="europe" percentage="100"/>
+      <ethnicgroup percentage="95">Albanian</ethnicgroup>
+      <ethnicgroup percentage="3">Greek</ethnicgroup>
+      <religion percentage="70">Muslim</religion>
+      <religion percentage="10">Roman Catholic</religion>
+      <religion percentage="20">Christian Orthodox</religion>
+      <language percentage="98.8">Albanian</language>
+      <language percentage="0.5">Greek</language>
+      <border country="GR" length="282"/>
+      <border country="MK" length="151"/>
+      <border country="MNE" length="172"/>
+      <border country="KOS" length="112"/>
+      <city id="cty-Albania-Tirane" country="AL">
+         <name>Tirana</name>
+         <name>Tirane</name>
+         <latitude>41.3</latitude>
+         <longitude>19.8</longitude>
+         <population year="1987">192000</population>
+         <population year="1990" measured="estimate">244153</population>
+         <population year="2011" measured="census">418495</population>
+      </city>
+      <city id="stadt-Shkoder-AL-AL" country="AL">
+         <name>Shkodër</name>
+         <latitude>42.2</latitude>
+         <longitude>19.2</longitude>
+         <population year="1987">62000</population>
+         <population year="2011" measured="census">77075</population>
+         <located_at watertype="lake" lake="lake-Skutarisee"/>
+      </city>
+      <city id="stadt-Durres-AL-AL" country="AL">
+         <name>Durrës</name>
+         <latitude>41.3</latitude>
+         <longitude>19.3</longitude>
+         <population year="1987">60000</population>
+         <population year="2011" measured="census">113249</population>
+         <located_at watertype="sea" sea="sea-Mittelmeer"/>
+      </city>
+      <city id="stadt-Vlore-AL-AL" country="AL">
+         <name>Vlorë</name>
+         <latitude>40.3</latitude>
+         <longitude>19.3</longitude>
+         <population year="1987">56000</population>
+         <population year="2011" measured="census">79513</population>
+         <located_at watertype="sea" sea="sea-Mittelmeer"/>
+      </city>
+      <city id="stadt-Elbasan-AL-AL" country="AL">
+         <name>Elbasan</name>
+         <latitude>41.1</latitude>
+         <longitude>20.1</longitude>
+         <population year="1987">53000</population>
+         <population year="2011" measured="census">78703</population>
+      </city>
+      <city id="stadt-Korce-AL-AL" country="AL">
+         <name>Korçë</name>
+         <latitude>40.4</latitude>
+         <longitude>20.5</longitude>
+         <population year="1987">52000</population>
+         <population year="2011" measured="census">51152</population>
+      </city>
+   </country>
+   <country car_code="GR"
+            area="131940"
+            capital="cty-Greece-Athens"
+            memberships="org-AG org-BIS org-BSEC org-CD org-SELEC org-CE org-EMU org-EAPC org-EBRD org-ECB org-EIB org-CERN org-ESA org-EU org-FATF org-FAO org-IGAD org-IPU org-IAEA org-IBRD org-ICC org-ICAO org-ICJ org-ICCt org-Interpol org-IDA org-IEA org-IFRCS org-IFC org-IFAD org-IHO org-ILO org-IMO org-IMSO org-IMF org-IOC org-IOM org-OIF org-ITSO org-ITU org-ITUC org-MIGA org-NATO org-NEA org-NSG org-OECD org-OSCE org-OPCW org-OAS org-PCA org-UN org-UNCTAD org-UNESCO org-UNHCR org-UNIDO org-UNIFIL org-UPU org-WCO org-WFTU org-WHO org-WIPO org-WMO org-UNWTO org-WTO org-ZC">
+      <name>Greece</name>
+      <localname>Ελληνική Δημοκρατία</localname>
+      <population measured="census" year="1861">1096810</population>
+      <population measured="census" year="1870">1457894</population>
+      <population measured="census" year="1879">1679470</population>
+      <population measured="census" year="1896">2433806</population>
+      <population measured="census" year="1907">2631592</population>
+      <population measured="census" year="1920">5016889</population>
+      <population measured="census" year="1928">6204684</population>
+      <population measured="census" year="1940">7344860</population>
+      <population measured="census" year="1951">7632801</population>
+      <population measured="census" year="1961">8388553</population>
+      <population measured="census" year="1971">8768372</population>
+      <population measured="census" year="1981">9739589</population>
+      <population year="1991" measured="census">10217335</population>
+      <population measured="census" year="2001">10934097</population>
+      <population measured="census" year="2011">10816286</population>
+      <population_growth>0.01</population_growth>
+      <infant_mortality>4.78</infant_mortality>
+      <gdp_total>243300</gdp_total>
+      <gdp_agri>3.5</gdp_agri>
+      <gdp_ind>16</gdp_ind>
+      <gdp_serv>80.5</gdp_serv>
+      <inflation>-0.8</inflation>
+      <unemployment>27.9</unemployment>
+      <indep_date from="Ottoman Empire">1829-01-01</indep_date>
+      <government>parliamentary republic</government>
+      <encompassed continent="europe" percentage="100"/>
+      <ethnicgroup percentage="93">Greek</ethnicgroup>
+      <religion percentage="98">Christian Orthodox</religion>
+      <religion percentage="1.3">Muslim</religion>
+      <language percentage="99">Greek</language>
+      <border country="AL" length="282"/>
+      <border country="MK" length="228"/>
+      <border country="BG" length="494"/>
+      <border country="TR" length="206"/>
+      <province id="prov-Greece-2" country="GR" capital="cty-Greece-Komotini">
+         <name>Anatolikis Makedonias kai Thrakis</name>
+         <localname>Ανατολικής Μακεδονίας και Θράκης</localname>
+         <area>14157</area>
+         <population measured="census" year="1991">570197</population>
+         <population year="1994">574308</population>
+         <population measured="census" year="2001">607162</population>
+         <population measured="census" year="2011">608182</population>
+         <city id="cty-Greece-Komotini" country="GR" province="prov-Greece-2">
+            <name>Komotini</name>
+         </city>
+         <city id="cty-Greece-9" country="GR" province="prov-Greece-2">
+            <name>Kavala</name>
+            <population year="1981">56705</population>
+            <population year="1991" measured="census">60187</population>
+            <population year="2001" measured="census">63774</population>
+            <population year="2011" measured="census">58790</population>
+            <located_at watertype="sea" sea="sea-Mittelmeer"/>
+         </city>
+      </province>
+      <province id="prov-Greece-3" country="GR" capital="cty-Greece-Athens">
+         <name>Attikis</name>
+         <localname>Αττικής</localname>
+         <area>3808</area>
+         <population measured="census" year="1991">3594817</population>
+         <population year="1994">3522769</population>
+         <population measured="census" year="2001">3894573</population>
+         <population measured="census" year="2011">3828434</population>
+         <city id="cty-Greece-Athens" country="GR" province="prov-Greece-3">
+            <name>Athina</name>
+            <localname>Αθήνα</localname>
+            <latitude>38.0</latitude>
+            <longitude>23.75</longitude>
+            <population year="1981">885737</population>
+            <population year="1991" measured="census">816556</population>
+            <population year="2001" measured="census">789166</population>
+            <population year="2011" measured="census">664046</population>
+            <located_at watertype="sea" sea="sea-Mittelmeer"/>
+         </city>
+         <city id="cty-Greece-4" country="GR" province="prov-Greece-3">
+            <name>Peiraias</name>
+            <name>Piräus</name>
+            <localname>Πειραιάς</localname>
+            <population year="1981">196389</population>
+            <population year="1991" measured="census">187399</population>
+            <population year="2001" measured="census">181933</population>
+            <population year="2011" measured="census">163688</population>
+            <located_at watertype="sea" sea="sea-Mittelmeer"/>
+         </city>
+         <city id="cty-Greece-Peristeri" country="GR" province="prov-Greece-3">
+            <name>Peristeri</name>
+            <localname>Περιστέρι</localname>
+            <population year="1991" measured="census">141971</population>
+            <population year="2001" measured="census">146743</population>
+            <population year="2011" measured="census">139981</population>
+         </city>
+         <city id="cty-Greece-Acharnes" country="GR" province="prov-Greece-3">
+            <name>Acharnes</name>
+            <localname>Αχαρνές</localname>
+            <population year="1991" measured="census">65035</population>
+            <population year="2001" measured="census">82555</population>
+            <population year="2011" measured="census">106943</population>
+         </city>
+      </province>
+      <province id="prov-Greece-4" country="GR" capital="cty-Greece-5">
+         <name>Dytikis Elladas</name>
+         <localname>Δυτικής Ελλάδας</localname>
+         <area>11350</area>
+         <population measured="census" year="1991">695044</population>
+         <population year="1994">702027</population>
+         <population measured="census" year="2001">721541</population>
+         <population measured="census" year="2011">679796</population>
+         <city id="cty-Greece-5" country="GR" province="prov-Greece-4">
+            <name>Patra</name>
+            <name>Patras</name>
+            <localname>Πάτρα</localname>
+            <population year="1981">142163</population>
+            <population year="1991" measured="census">190463</population>
+            <population year="2001" measured="census">210494</population>
+            <population year="2011" measured="census">213984</population>
+            <located_at watertype="sea" sea="sea-Mittelmeer"/>
+         </city>
+      </province>
+      <province id="prov-Greece-5" country="GR" capital="cty-Greece-Kozani">
+         <name>Dytikis Makedonias</name>
+         <localname>Δυτικής Μακεδονίας</localname>
+         <area>9451</area>
+         <population measured="census" year="1991">288495</population>
+         <population year="1994">292751</population>
+         <population measured="census" year="2001">294317</population>
+         <population measured="census" year="2011">283689</population>
+         <city id="cty-Greece-Kozani" country="GR" province="prov-Greece-5">
+            <name>Kozani</name>
+         </city>
+      </province>
+      <province id="prov-Greece-6" country="GR" capital="cty-Greece-Korfu">
+         <name>Ionion Nison</name>
+         <localname>Ιονίων Νήσων</localname>
+         <area>2306</area>
+         <population measured="census" year="1991">189338</population>
+         <population year="1994">191003</population>
+         <population measured="census" year="2001">209608</population>
+         <population measured="census" year="2011">207855</population>
+         <city id="cty-Greece-Korfu" country="GR" province="prov-Greece-6">
+            <name>Kerkyra</name>
+            <name>Korfu</name>
+            <localname>Κέρκυρας</localname>
+            <population year="1991" measured="census">101236</population>
+            <population year="2001" measured="census">108652</population>
+            <population year="2011" measured="census">102071</population>
+            <located_at watertype="sea" sea="sea-Mittelmeer"/>
+            <located_on island="island-Korfu"/>
+         </city>
+      </province>
+      <province id="prov-Greece-7" country="GR" capital="cty-Greece-Ioannina">
+         <name>Ipeiroy</name>
+         <localname>Ηπείρου</localname>
+         <area>9203</area>
+         <population measured="census" year="1991">327176</population>
+         <population measured="census" year="2001">336392</population>
+         <population measured="census" year="2011">336856</population>
+         <city id="cty-Greece-Ioannina" country="GR" province="prov-Greece-7">
+            <name>Ioannina</name>
+            <localname>Ιωαννιτών</localname>
+            <population year="1991" measured="census">92425</population>
+            <population year="2001" measured="census">103101</population>
+            <population year="2011" measured="census">112486</population>
+         </city>
+      </province>
+      <province id="prov-Greece-8" country="GR" capital="cty-Greece-Thessaloniki">
+         <name>Kentrikis Makedonias</name>
+         <localname>Κεντρικής Μακεδονίας</localname>
+         <area>18810</area>
+         <population measured="census" year="1991">1706338</population>
+         <population year="1994">1729581</population>
+         <population measured="census" year="2001">1874597</population>
+         <population measured="census" year="2011">1880297</population>
+         <city id="cty-Greece-Thessaloniki" country="GR" province="prov-Greece-8">
+            <name>Thessaloniki</name>
+            <localname>Θεσσαλονίκη</localname>
+            <latitude>40.6167</latitude>
+            <longitude>22.95</longitude>
+            <population year="1981">406413</population>
+            <population year="1991" measured="census">424220</population>
+            <population year="2001" measured="census">397156</population>
+            <population year="2011" measured="census">325182</population>
+            <located_at watertype="sea" sea="sea-Mittelmeer"/>
+         </city>
+      </province>
+      <province id="prov-Greece-9" country="GR" capital="cty-Greece-7">
+         <name>Kritis</name>
+         <localname>Κρήτης</localname>
+         <area>8335</area>
+         <population measured="census" year="1991">536633</population>
+         <population year="1994">537183</population>
+         <population measured="census" year="2001">594368</population>
+         <population measured="census" year="2011">623065</population>
+         <city id="cty-Greece-7" country="GR" province="prov-Greece-9">
+            <name>Iraklio</name>
+            <name>Iraklion</name>
+            <localname>Ηράκλειο</localname>
+            <population year="1981">102398</population>
+            <population year="1991" measured="census">146536</population>
+            <population year="2001" measured="census">163115</population>
+            <population year="2011" measured="census">173993</population>
+            <located_at watertype="sea" sea="sea-Mittelmeer"/>
+            <located_on island="island-Crete"/>
+         </city>
+         <city id="cty-Greece-Chania" country="GR" province="prov-Greece-9">
+            <name>Chania</name>
+            <localname>Χανίων</localname>
+            <population year="1991" measured="census">83712</population>
+            <population year="2001" measured="census">98202</population>
+            <population year="2011" measured="census">108642</population>
+            <located_at watertype="sea" sea="sea-Mittelmeer"/>
+            <located_on island="island-Crete"/>
+         </city>
+      </province>
+      <province id="prov-Greece-10" country="GR" capital="cty-Greece-Ermoupoli">
+         <name>Notioy Aigaioy</name>
+         <localname>Νότιου Αιγαίου</localname>
+         <area>5285</area>
+         <population measured="census" year="1991">255192</population>
+         <population year="1994">262522</population>
+         <population measured="census" year="2001">298462</population>
+         <population measured="census" year="2011">309015</population>
+         <city id="cty-Greece-Ermoupoli" country="GR" province="prov-Greece-10">
+            <name>Ermoupoli</name>
+            <located_at watertype="sea" sea="sea-Mittelmeer"/>
+            <located_on island="island-Syros"/>
+         </city>
+         <city id="cty-Greece-Rhodes" country="GR" province="prov-Greece-10">
+            <name>Rhodes</name>
+            <name>Rhodos</name>
+            <localname>Ρόδου</localname>
+            <population year="1991" measured="census">96159</population>
+            <population year="2001" measured="census">115334</population>
+            <population year="2011" measured="census">115490</population>
+            <located_at watertype="sea" sea="sea-Mittelmeer"/>
+            <located_on island="island-Rhodos"/>
+         </city>
+      </province>
+      <province id="prov-Greece-11" country="GR" capital="cty-Greece-Tripoli">
+         <name>Peloponnisos</name>
+         <localname>Πελοποννήσου</localname>
+         <area>15489</area>
+         <population measured="census" year="1991">573958</population>
+         <population measured="census" year="2001">597622</population>
+         <population measured="census" year="2011">577903</population>
+         <city id="cty-Greece-Tripoli" country="GR" province="prov-Greece-11">
+            <name>Tripoli</name>
+         </city>
+      </province>
+      <province id="prov-Greece-12" country="GR" capital="cty-Greece-Lamia">
+         <name>Stereas Elladas</name>
+         <localname>Στερεάς Ελλάδας</localname>
+         <area>15549</area>
+         <population measured="census" year="1991">548101</population>
+         <population measured="census" year="2001">558144</population>
+         <population measured="census" year="2011">547390</population>
+         <city id="cty-Greece-Lamia" country="GR" province="prov-Greece-12">
+            <name>Lamia</name>
+            <localname>Λαμία</localname>
+            <population year="2011" measured="census">75315</population>
+         </city>
+         <city id="cty-Greece-Chalkida" country="GR" province="prov-Greece-12">
+            <name>Chalkida</name>
+            <name>Chalkis</name>
+            <localname>Χαλκιδέων</localname>
+            <population year="1991" measured="census">85573</population>
+            <population year="2001" measured="census">92809</population>
+            <population year="2011" measured="census">102223</population>
+         </city>
+      </province>
+      <province id="prov-Greece-13" country="GR" capital="cty-Greece-6">
+         <name>Thessalias</name>
+         <localname>Θεσσαλίας</localname>
+         <area>14036</area>
+         <population measured="census" year="1991">729268</population>
+         <population year="1994">731030</population>
+         <population measured="census" year="2001">740115</population>
+         <population measured="census" year="2011">732762</population>
+         <city id="cty-Greece-6" country="GR" province="prov-Greece-13">
+            <name>Larissa</name>
+            <localname>Λάρισα</localname>
+            <population year="1981">102426</population>
+            <population year="1991" measured="census">129429</population>
+            <population year="2001" measured="census">145981</population>
+            <population year="2011" measured="census">162591</population>
+         </city>
+         <city id="cty-Greece-8" country="GR" province="prov-Greece-13">
+            <name>Volos</name>
+            <localname>Βόλος</localname>
+            <population year="1981">71378</population>
+            <population year="1991" measured="census">132917</population>
+            <population year="2001" measured="census">142923</population>
+            <population year="2011" measured="census">144449</population>
+            <located_at watertype="sea" sea="sea-Mittelmeer"/>
+         </city>
+      </province>
+      <province id="prov-Greece-14" country="GR" capital="cty-Greece-Mytilini">
+         <name>Boreioy Aigaioy</name>
+         <localname>Βορείου Αιγαίου</localname>
+         <area>3835</area>
+         <population measured="census" year="1991">201363</population>
+         <population year="1994">189541</population>
+         <population measured="census" year="2001">205235</population>
+         <population measured="census" year="2011">199231</population>
+         <city id="cty-Greece-Mytilini" country="GR" province="prov-Greece-14">
+            <name>Mytilini</name>
+            <located_at watertype="sea" sea="sea-Mittelmeer"/>
+            <located_on island="island-Lesbos"/>
+         </city>
+      </province>
+      <province id="prov-Greece-15" country="GR" capital="cty-Greece-Mytilini">
+         <name>Aghion Oros</name>
+         <localname>Άγιο Όρος (Αυτοδιοίκητο)</localname>
+         <area>335</area>
+         <population measured="census" year="1991">1415</population>
+         <population measured="census" year="2001">1961</population>
+         <population measured="census" year="2011">1811</population>
+         <city id="cty-Greece-Karyes" country="GR" province="prov-Greece-15">
+            <name>Karyes</name>
+            <population year="2014">233</population>
+         </city>
+      </province>
+   </country>
+   <country car_code="MK"
+            area="25333"
+            capital="cty-Macedonia-Skopje"
+            memberships="org-BIS org-CEI org-CD org-SELEC org-CE org-EAPC org-EBRD org-EU org-FAO org-IPU org-IAEA org-IBRD org-ICC org-ICAO org-ICCt org-Interpol org-IDA org-IFRCS org-IFC org-IFAD org-ILO org-IMO org-IMF org-IOC org-IOM org-OIF org-ITU org-ITUC org-MIGA org-OSCE org-OPCW org-OAS org-PFP org-PCA org-UN org-UNCTAD org-UNESCO org-UNHCR org-UNIDO org-UNIFIL org-UPU org-WCO org-WHO org-WIPO org-WMO org-UNWTO org-WTO">
+      <name>Macedonia</name>
+      <localname>Република Македониjа</localname>
+      <population measured="census" year="1921">808724</population>
+      <population measured="census" year="1931">949958</population>
+      <population measured="census" year="1948">1152986</population>
+      <population measured="census" year="1953">1304514</population>
+      <population measured="census" year="1961">1406003</population>
+      <population measured="census" year="1971">1647308</population>
+      <population measured="census" year="1981">1909136</population>
+      <population measured="census" year="1991">2033964</population>
+      <population measured="census" year="1994">1935034</population>
+      <population measured="census" year="2002">2022547</population>
+      <population year="2011" measured="estimate">2059794</population>
+      <population_growth>0.21</population_growth>
+      <infant_mortality>7.9</infant_mortality>
+      <gdp_total>10650</gdp_total>
+      <gdp_agri>10.2</gdp_agri>
+      <gdp_ind>27.5</gdp_ind>
+      <gdp_serv>62.3</gdp_serv>
+      <inflation>2.8</inflation>
+      <unemployment>28.6</unemployment>
+      <indep_date from="Yugoslavia">1991-09-17</indep_date>
+      <government>parliamentary democracy</government>
+      <encompassed continent="europe" percentage="100"/>
+      <ethnicgroup percentage="64.2">Macedonian</ethnicgroup>
+      <ethnicgroup percentage="25.2">Albanian</ethnicgroup>
+      <ethnicgroup percentage="3.9">Turkish</ethnicgroup>
+      <ethnicgroup percentage="2.7">Gypsy</ethnicgroup>
+      <ethnicgroup percentage="1.8">Serb</ethnicgroup>
+      <religion percentage="64.7">Christian Orthodox</religion>
+      <religion percentage="33.3">Muslim</religion>
+      <religion percentage="0.2">Roman Catholic</religion>
+      <language percentage="66.5">Macedonian</language>
+      <language percentage="25.1">Albanian</language>
+      <language percentage="3.5">Turkish</language>
+      <language percentage="1.9">Roma</language>
+      <language percentage="1.2">Serbian</language>
+      <border country="AL" length="151"/>
+      <border country="GR" length="228"/>
+      <border country="SRB" length="62"/>
+      <border country="KOS" length="159"/>
+      <border country="BG" length="148"/>
+      <city id="cty-Macedonia-Skopje" country="MK">
+         <name>Skopje</name>
+         <localname>Град Скопје</localname>
+         <latitude>42</latitude>
+         <longitude>21.5</longitude>
+         <population year="2002" measured="census">506926</population>
+         <population year="2011" measured="estimate">514967</population>
+      </city>
+      <city id="cty-Macedonia-Kumanovo" country="MK">
+         <name>Kumanovo</name>
+         <localname>Град Куманово</localname>
+         <latitude>42.1</latitude>
+         <longitude>21.7</longitude>
+         <population year="2002" measured="census">105484</population>
+         <population year="2011" measured="estimate">107745</population>
+      </city>
+   </country>
+   <country car_code="SRB"
+            area="77474"
+            capital="city-Belgrade-SRB-SRB"
+            memberships="org-BIS org-BSEC org-CEI org-CD org-SELEC org-CE org-EAPC org-EBRD org-EU org-FAO org-G-9 org-IPU org-IAEA org-IBRD org-ICC org-ICAO org-ICCt org-Interpol org-IDA org-IFRCS org-IFC org-IHO org-ILO org-IMO org-IMSO org-IMF org-IOC org-IOM org-OIF org-ITSO org-ITU org-ITUC org-MIGA org-NAM org-NSG org-OSCE org-OPCW org-OAS org-PFP org-PCA org-UN org-UNCTAD org-UNESCO org-UNHCR org-UNIDO org-UNIFIL org-UNMIL org-UNOCI org-MONUSCO org-UNFICYP org-UNTSO org-UPU org-WCO org-WHO org-WIPO org-WMO org-UNWTO org-WTO">
+      <name>Serbia</name>
+      <localname>Република Србија</localname>
+      <population measured="est." year="1950">6732256</population>
+      <population measured="est." year="1960">7657958</population>
+      <population measured="est." year="1970">8236185</population>
+      <population measured="est." year="1980">9057483</population>
+      <population measured="est." year="1990">9735429</population>
+      <population year="1991" measured="census">7620531</population>
+      <population measured="census" year="2002">7498001</population>
+      <population measured="census" year="2011">7120666</population>
+      <population_growth>-0.46</population_growth>
+      <infant_mortality>6.16</infant_mortality>
+      <gdp_total>43680</gdp_total>
+      <gdp_agri>7.9</gdp_agri>
+      <gdp_ind>31.8</gdp_ind>
+      <gdp_serv>60.3</gdp_serv>
+      <inflation>2.2</inflation>
+      <unemployment>20.1</unemployment>
+      <indep_date from="Yugoslavia">1992-04-11</indep_date>
+      <government>republic</government>
+      <encompassed continent="europe" percentage="100"/>
+      <ethnicgroup percentage="82.9">Serb</ethnicgroup>
+      <ethnicgroup percentage="0.9">Montenegrin</ethnicgroup>
+      <ethnicgroup percentage="3.9">Hungarian</ethnicgroup>
+      <ethnicgroup percentage="1.4">Roma</ethnicgroup>
+      <ethnicgroup percentage="1.8">Bosniak</ethnicgroup>
+      <ethnicgroup percentage="1.1">Croat</ethnicgroup>
+      <religion percentage="85">Christian Orthodox</religion>
+      <religion percentage="3.2">Muslim</religion>
+      <religion percentage="5.5">Roman Catholic</religion>
+      <religion percentage="1.1">Protestant</religion>
+      <language percentage="88.3">Serbian</language>
+      <language percentage="3.8">Hungarian</language>
+      <language percentage="1.8">Bosnian</language>
+      <language percentage="1.1">Roma</language>
+      <border country="H" length="151"/>
+      <border country="RO" length="476"/>
+      <border country="BG" length="318"/>
+      <border country="MK" length="62"/>
+      <border country="HR" length="241"/>
+      <border country="BIH" length="357"/>
+      <border country="MNE" length="124"/>
+      <border country="KOS" length="352"/>
+      <city id="city-Belgrade-SRB-SRB" country="SRB">
+         <name>Beograd</name>
+         <localname>Београд</localname>
+         <latitude>44.8</latitude>
+         <longitude>20.4667</longitude>
+         <population year="1987">1407073</population>
+         <population year="2002" measured="census">1576124</population>
+         <population year="2011" measured="census">1639121</population>
+         <located_at watertype="river" river="river-Donau"/>
+         <located_at watertype="river" river="river-Save"/>
+      </city>
+      <city id="city-NoviSad-SRB-SRB" country="SRB">
+         <name>Novi Sad</name>
+         <localname>Нови Сад</localname>
+         <population year="2002" measured="census">299294</population>
+         <population year="2011" measured="census">335701</population>
+         <located_at watertype="river" river="river-Donau"/>
+      </city>
+      <city id="city-Nis-SRB-SRB" country="SRB">
+         <name>Niš</name>
+         <localname>Ниш</localname>
+         <population year="2002" measured="census">250518</population>
+         <population year="2011" measured="census">257867</population>
+         <located_at watertype="river" river="river-SouthernMorava"/>
+      </city>
+   </country>
+   <country car_code="MNE"
+            area="14026"
+            capital="city-Podgorica-MNE-MNE"
+            memberships="org-CEI org-CD org-SELEC org-CE org-EAPC org-EBRD org-EU org-FAO org-IPU org-IAEA org-IBRD org-ICC org-ICAO org-ICCt org-Interpol org-IDA org-IFRCS org-IFC org-IHO org-ILO org-IMO org-IMSO org-IMF org-IOC org-IOM org-ISO org-OIF org-ITSO org-ITU org-ITUC org-MIGA org-NAM org-OSCE org-OPCW org-PFP org-PCA org-UN org-UNCTAD org-UNESCO org-UNHCR org-UNIDO org-UNMIL org-UPU org-WCO org-WHO org-WIPO org-WMO org-UNWTO org-WTO">
+      <name>Montenegro</name>
+      <localname>Црна Гора</localname>
+      <population measured="census" year="1921">311341</population>
+      <population measured="census" year="1931">360044</population>
+      <population measured="census" year="1948">377189</population>
+      <population measured="census" year="1953">419873</population>
+      <population measured="census" year="1961">471894</population>
+      <population measured="census" year="1971">529604</population>
+      <population measured="census" year="1981">584310</population>
+      <population measured="census" year="1991">615035</population>
+      <population measured="census" year="2003">620145</population>
+      <population year="2011" measured="census">620029</population>
+      <population_growth>-0.49</population_growth>
+      <gdp_total>4518</gdp_total>
+      <gdp_agri>0.8</gdp_agri>
+      <gdp_ind>11.3</gdp_ind>
+      <gdp_serv>87.9</gdp_serv>
+      <inflation>4</inflation>
+      <unemployment>19.1</unemployment>
+      <indep_date from="SRB">2006-06-03</indep_date>
+      <government>republic</government>
+      <encompassed continent="europe" percentage="100"/>
+      <ethnicgroup percentage="43">Montenegrin</ethnicgroup>
+      <ethnicgroup percentage="32">Serb</ethnicgroup>
+      <ethnicgroup percentage="8">Bosniak</ethnicgroup>
+      <ethnicgroup percentage="5">Albanian</ethnicgroup>
+      <religion percentage="74.2">Christian Orthodox</religion>
+      <religion percentage="17.7">Muslim</religion>
+      <religion percentage="3.5">Roman Catholic</religion>
+      <language percentage="63.6">Serbian</language>
+      <language percentage="22">Montenegrin</language>
+      <language percentage="5.5">Bosnian</language>
+      <language percentage="5.3">Albanian</language>
+      <border country="HR" length="25"/>
+      <border country="SRB" length="124"/>
+      <border country="BIH" length="249"/>
+      <border country="AL" length="172"/>
+      <border country="KOS" length="79"/>
+      <city id="city-Podgorica-MNE-MNE" country="MNE">
+         <name>Podgorica</name>
+         <latitude>42.26</latitude>
+         <longitude>19.16</longitude>
+         <population year="2003" measured="census">136473</population>
+         <population year="2011" measured="census">150977</population>
+         <located_at watertype="river" river="river-Moraca"/>
+      </city>
+   </country>
+   <country car_code="KOS"
+            area="10887"
+            capital="city-Pristina-KOS-KOS"
+            memberships="org-CD org-EBRD org-IBRD org-IDA org-IFC org-IMF org-ITUC">
+      <name>Kosovo</name>
+      <localname>Republika e Kosovës</localname>
+      <population measured="census" year="1981">1584440</population>
+      <population measured="census" year="1991">1956196</population>
+      <population measured="census" year="2011">1733872</population>
+      <gdp_total>7150</gdp_total>
+      <gdp_agri>12.9</gdp_agri>
+      <gdp_ind>22.6</gdp_ind>
+      <gdp_serv>64.5</gdp_serv>
+      <inflation>1.8</inflation>
+      <unemployment>30.9</unemployment>
+      <indep_date from="SRB">2008-02-17</indep_date>
+      <government>republic</government>
+      <encompassed continent="europe" percentage="100"/>
+      <ethnicgroup percentage="92">Albanian</ethnicgroup>
+      <ethnicgroup percentage="5">Serbian</ethnicgroup>
+      <religion percentage="90">Muslim</religion>
+      <language percentage="92">Albanian</language>
+      <language percentage="5">Serbian</language>
+      <border country="MNE" length="79"/>
+      <border country="SRB" length="352"/>
+      <border country="MK" length="159"/>
+      <border country="AL" length="112"/>
+      <city id="city-Pristina-KOS-KOS" country="KOS">
+         <name>Prishtine</name>
+         <name>Pristina</name>
+         <latitude>42.40</latitude>
+         <longitude>21.10</longitude>
+         <population year="1981" measured="census">148090</population>
+         <population year="1991" measured="census">199654</population>
+         <population year="2011" measured="census">198214</population>
+      </city>
+   </country>
+   <country car_code="AND"
+            area="450"
+            capital="cty-Andorra-Andorra-la-Vella"
+            memberships="org-CE org-FAO org-IPU org-ICC org-ICAO org-ICCt org-Interpol org-IFRCS org-IOC org-OIF org-ITU org-OSCE org-OPCW org-UN org-UNCTAD org-UNESCO org-WCO org-WHO org-WIPO org-UNWTO org-WTO">
+      <name>Andorra</name>
+      <localname>Principat d’Andorra</localname>
+      <population measured="est." year="1950">6197</population>
+      <population measured="est." year="1960">13414</population>
+      <population measured="est." year="1970">24279</population>
+      <population measured="est." year="1980">36063</population>
+      <population measured="census" year="1989">46166</population>
+      <population year="2001" measured="admin.">66334</population>
+      <population year="2006" measured="admin.">81222</population>
+      <population year="2011" measured="admin.">78115</population>
+      <population_growth>0.17</population_growth>
+      <infant_mortality>3.69</infant_mortality>
+      <gdp_total>4800</gdp_total>
+      <gdp_agri>14</gdp_agri>
+      <gdp_ind>79</gdp_ind>
+      <gdp_serv>6</gdp_serv>
+      <inflation>1.1</inflation>
+      <unemployment>4</unemployment>
+      <indep_date>1278-09-08</indep_date>
+      <government>parliamentary democracy that retains as its chiefs of state a co-principality</government>
+      <encompassed continent="europe" percentage="100"/>
+      <ethnicgroup percentage="43">Spanish</ethnicgroup>
+      <ethnicgroup percentage="33">Andorran</ethnicgroup>
+      <ethnicgroup percentage="11">Portuguese</ethnicgroup>
+      <ethnicgroup percentage="2">French</ethnicgroup>
+      <ethnicgroup percentage="5">African</ethnicgroup>
+      <religion percentage="95">Roman Catholic</religion>
+      <language percentage="44">Catalan</language>
+      <language percentage="33">Spanish</language>
+      <language percentage="2">Galician</language>
+      <language percentage="11">Portuguese</language>
+      <language percentage="7">French</language>
+      <border country="F" length="60"/>
+      <border country="E" length="65"/>
+      <city id="cty-Andorra-Andorra-la-Vella" country="AND">
+         <name>Andorra la Vella</name>
+         <latitude>42.3</latitude>
+         <longitude>1.3</longitude>
+         <population year="1987">15600</population>
+         <population year="2001" measured="admin.">20787</population>
+         <population year="2011" measured="admin.">22256</population>
+      </city>
+   </country>
+   
+</mondial>

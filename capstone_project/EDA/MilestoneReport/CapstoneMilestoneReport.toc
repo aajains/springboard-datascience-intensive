@@ -1,0 +1,15 @@
+\select@language {english}
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}
+\contentsline {section}{\numberline {2}Data Acquisition and Cleaning}{1}{section.2}
+\contentsline {section}{\numberline {3}Data Exploration}{2}{section.3}
+\contentsline {subsection}{\numberline {3.1}Introduction to the cleaned data}{2}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Flight Cancellation Rate}{3}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Calendar Variables}{5}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Airports}{6}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}Airlines}{6}{subsection.3.5}
+\contentsline {subsection}{\numberline {3.6}Flight Distance}{7}{subsection.3.6}
+\contentsline {subsection}{\numberline {3.7}Weather Factors}{8}{subsection.3.7}
+\contentsline {subsection}{\numberline {3.8}Historical Performances}{10}{subsection.3.8}
+\contentsline {section}{\numberline {4}Limitations}{12}{section.4}
+\contentsline {section}{\numberline {5}Other Data and Future Work}{13}{section.5}
+\contentsline {section}{\numberline {6}Conclusions}{13}{section.6}

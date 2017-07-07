@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  28 JUN 2017 12:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  6 JUL 2017 19:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -853,17 +853,17 @@ Package pdftex.def Info: hourly_canrate.pdf used on input line 146.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
+<airport_canrate.pdf, id=265, 1084.05pt x 361.35pt>
+File: airport_canrate.pdf Graphic file (type pdf)
+ <use airport_canrate.pdf>
+Package pdftex.def Info: airport_canrate.pdf used on input line 159.
+(pdftex.def)             Requested size: 433.62pt x 144.53743pt.
+
 [5 <./monthly_canrate.pdf> <./weekly_canrate.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./weekly_canrate.pdf): PDF i
 nclusion: multiple pdfs with page group included in a single page
->] <airport_canrate.pdf, id=360, 1084.05pt x 361.35pt>
-File: airport_canrate.pdf Graphic file (type pdf)
-
-<use airport_canrate.pdf>
-Package pdftex.def Info: airport_canrate.pdf used on input line 159.
-(pdftex.def)             Requested size: 433.62pt x 144.53743pt.
- <airline_canrate.pdf, id=365, 1084.05pt x 361.35pt>
+>] <airline_canrate.pdf, id=363, 1084.05pt x 361.35pt>
 File: airline_canrate.pdf Graphic file (type pdf)
 
 <use airline_canrate.pdf>
@@ -873,88 +873,96 @@ Package pdftex.def Info: airline_canrate.pdf used on input line 173.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[6 <./hourly_canrate.pdf> <./airport_canrate.pdf
-
-pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./airport_canrate.pdf): PDF 
-inclusion: multiple pdfs with page group included in a single page
->] <distance_canrate.pdf, id=462, 1084.05pt x 433.62pt>
+<distance_canrate.pdf, id=366, 1084.05pt x 433.62pt>
 File: distance_canrate.pdf Graphic file (type pdf)
 
 <use distance_canrate.pdf>
 Package pdftex.def Info: distance_canrate.pdf used on input line 186.
 (pdftex.def)             Requested size: 433.62pt x 173.44492pt.
- [7 <./airline_canrate.pdf> <./distance_canrate.pdf
+ [6 <./hourly_canrate.pdf> <./airport_canrate.pdf
 
-pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./distance_canrate.pdf): PDF
- inclusion: multiple pdfs with page group included in a single page
->] <temperature_canrate.pdf, id=551, 1084.05pt x 433.62pt>
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./airport_canrate.pdf): PDF 
+inclusion: multiple pdfs with page group included in a single page
+>] <temperature_canrate.pdf, id=464, 1084.05pt x 433.62pt>
 File: temperature_canrate.pdf Graphic file (type pdf)
 
 <use temperature_canrate.pdf>
 Package pdftex.def Info: temperature_canrate.pdf used on input line 202.
 (pdftex.def)             Requested size: 433.62pt x 173.44492pt.
 
-<humidity_windspeed_canrate.pdf, id=553, 1084.05pt x 361.35pt>
+<humidity_windspeed_canrate.pdf, id=466, 1084.05pt x 361.35pt>
 File: humidity_windspeed_canrate.pdf Graphic file (type pdf)
 
 <use humidity_windspeed_canrate.pdf>
 Package pdftex.def Info: humidity_windspeed_canrate.pdf used on input line 210.
 
 (pdftex.def)             Requested size: 433.62pt x 144.53743pt.
- [8 <./temperature_canrate.pdf> <./humidity_windspeed_canrate.pdf
+ [7 <./airline_canrate.pdf> <./distance_canrate.pdf
 
-pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./humidity_windspeed_canrate
-.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] <winddir_canrate.pdf, id=651, 1084.05pt x 433.62pt>
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./distance_canrate.pdf): PDF
+ inclusion: multiple pdfs with page group included in a single page
+>] <winddir_canrate.pdf, id=554, 1084.05pt x 433.62pt>
 File: winddir_canrate.pdf Graphic file (type pdf)
 
 <use winddir_canrate.pdf>
 Package pdftex.def Info: winddir_canrate.pdf used on input line 221.
 (pdftex.def)             Requested size: 433.62pt x 173.44492pt.
 
-<conditions_canrate.pdf, id=653, 1084.05pt x 794.97pt>
+<conditions_canrate.pdf, id=556, 1084.05pt x 794.97pt>
 File: conditions_canrate.pdf Graphic file (type pdf)
 
 <use conditions_canrate.pdf>
 Package pdftex.def Info: conditions_canrate.pdf used on input line 229.
 (pdftex.def)             Requested size: 433.62pt x 317.98236pt.
- [9 <./winddir_canrate.pdf> <./conditions_canrate.pdf
+ [8 <./temperature_canrate.pdf> <./humidity_windspeed_canrate.pdf
 
-pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./conditions_canrate.pdf): P
-DF inclusion: multiple pdfs with page group included in a single page
->] <candiv_canrate.pdf, id=742, 1300.86pt x 578.16pt>
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./humidity_windspeed_canrate
+.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>] <candiv_canrate.pdf, id=656, 1300.86pt x 578.16pt>
 File: candiv_canrate.pdf Graphic file (type pdf)
  <use candiv_canrate.pdf>
 Package pdftex.def Info: candiv_canrate.pdf used on input line 242.
 (pdftex.def)             Requested size: 433.62pt x 192.71658pt.
 
-<history_indicator_canrate.pdf, id=744, 867.24pt x 289.08pt>
+[9 <./winddir_canrate.pdf> <./conditions_canrate.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./conditions_canrate.pdf): P
+DF inclusion: multiple pdfs with page group included in a single page
+>] <history_indicator_canrate.pdf, id=744, 867.24pt x 289.08pt>
 File: history_indicator_canrate.pdf Graphic file (type pdf)
 
 <use history_indicator_canrate.pdf>
 Package pdftex.def Info: history_indicator_canrate.pdf used on input line 254.
 (pdftex.def)             Requested size: 433.62pt x 144.53964pt.
- [10 <./candiv_canrate.pdf>]
-<depdelaymedian_canrate.pdf, id=796, 1084.05pt x 578.16pt>
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[10 <./candiv_canrate.pdf>]
+<depdelaymedian_canrate.pdf, id=797, 1084.05pt x 578.16pt>
 File: depdelaymedian_canrate.pdf Graphic file (type pdf)
 
 <use depdelaymedian_canrate.pdf>
 Package pdftex.def Info: depdelaymedian_canrate.pdf used on input line 265.
 (pdftex.def)             Requested size: 433.62pt x 231.2599pt.
- [11 <./history_indicator_canrate.pdf> <./depdelaymedian_canrate.pdf
 
-pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./depdelaymedian_canrate.pdf
-): PDF inclusion: multiple pdfs with page group included in a single page
->] <arrdelaymedian_canrate.pdf, id=892, 1084.05pt x 578.16pt>
+<arrdelaymedian_canrate.pdf, id=799, 1084.05pt x 578.16pt>
 File: arrdelaymedian_canrate.pdf Graphic file (type pdf)
 
 <use arrdelaymedian_canrate.pdf>
 Package pdftex.def Info: arrdelaymedian_canrate.pdf used on input line 277.
 (pdftex.def)             Requested size: 433.62pt x 231.2599pt.
- [12 <./arrdelaymedian_canrate.pdf>] [13]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 313.
 
-[14]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[11 <./history_indicator_canrate.pdf> <./depdelaymedian_canrate.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./depdelaymedian_canrate.pdf
+): PDF inclusion: multiple pdfs with page group included in a single page
+>] [12 <./arrdelaymedian_canrate.pdf>] [13]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 313.
+ [14]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 313.
  (./CapstoneMilestoneReport.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 313.
@@ -967,11 +975,11 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 313.
 Here is how much of TeX's memory you used:
  7892 strings out of 493014
  111794 string characters out of 6133351
- 215111 words of memory out of 5000000
+ 215087 words of memory out of 5000000
  11201 multiletter control sequences out of 15000+600000
  17955 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,7n,32p,1379b,420s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 34i,7n,32p,1379b,424s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
@@ -979,9 +987,9 @@ Here is how much of TeX's memory you used:
 sr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr
 /local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/
 local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on CapstoneMilestoneReport.pdf (16 pages, 561402 bytes).
+Output written on CapstoneMilestoneReport.pdf (16 pages, 578678 bytes).
 PDF statistics:
- 1005 PDF objects out of 1200 (max. 8388607)
+ 1003 PDF objects out of 1200 (max. 8388607)
  340 compressed objects within 4 object streams
  66 named destinations out of 1000 (max. 500000)
  198 words of extra memory for PDF output out of 10000 (max. 10000000)

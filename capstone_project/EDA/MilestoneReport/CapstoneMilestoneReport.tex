@@ -70,7 +70,7 @@ Having the two datasets, we then merge them such that we get the weather informa
 \subsection{Introduction to the cleaned data}
 \label{subsec:dataintro}
 %%%%%%%%%%%%%%%%%%%%%%%%%
-We have the data for years 2015 and 2016 and we plan to use 2015 data for training the machine learning model and 2016 for evaluating performance, i.e. for testing. Therefore, we decide to consider only 2015 data for exploratory data analysis (EDA) too. There are 1,417,308 and 1,439,831 records for years 2015 and 2016, respectively, and 90 fields. In this project, we considered top 20 airports in the US (in terms of most traffic). These 20 airports network broadly covers the whole US as shown in Fig. \ref{fig:map}. 
+There are 1,417,308 and 1,439,831 records for years 2015 and 2016, respectively, and 90 fields. In this project, we considered top 20 airports in the US (in terms of most traffic). These 20 airports network broadly covers the whole US as shown in Fig. \ref{fig:map}. 
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=6in]{map.pdf}
@@ -86,13 +86,13 @@ We will go through most of the fields (or columns) in the dataset to explore the
 \subsection{Flight Cancellation Rate}
 \label{subsec:canrate}
 %%%%%%%%%%%%%%%%%%%%%%%%%
-Out of 1.4$+$ million flights operating at top 20 airports in 2015, about 1.28$\%$ of them got cancelled. This does not seem like a large number but such rare events cause a great deal of inconveniences to passengers, and cost a lot of money to airline companies. Therefore, it is important to understand where, when and how this small events occur. To start with, we plot the total number of flights on a daily basis and see how many flights got cancelled (on a daily basis) in Fig. \ref{fig:daily}. 
+Out of 2.8$+$ million flights operating at top 20 airports in 2015-2016, about 1.15$\%$ of them got cancelled. This does not seem like a large number but such rare events cause a great deal of inconveniences to passengers, and cost a lot of money to airline companies. Therefore, it is important to understand where, when and how this small events occur. To start with, we plot the total number of flights on a daily basis and see how many flights got cancelled (on a daily basis) in Fig. \ref{fig:daily}. 
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=6in]{daily_flights_cancellations.pdf}
 \end{center}
 \caption{\label{fig:daily}
-Total number of flights (right y-axis) and number of cancelled flights (left y-axis) in 2015, on a daily basis.}
+Total number of flights (right y-axis) and number of cancelled flights (left y-axis), on a daily basis.}
 \end{figure}
 The daily total number of flights remain almost steady with regular and periodic troughs. The number of cancelled flights has no steady trend but has some big spikes. Knowing the number of flights and number of cancellations, we can calculate the cancellation rate for a given day. We define the cancellation rate as, 
 \begin{equation}
@@ -105,7 +105,7 @@ where a ``scenario" can refer to a class of a field. In the plot above, a scenar
 \includegraphics[width=6in]{daily_canrate.pdf}
 \end{center}
 \caption{\label{fig:dailycanrate}
-Daily cancellation rates in 2015.}
+Daily cancellation rates.}
 \end{figure}
 Big spikes in the cancellation rates were mainly caused by bad weather as depicted above. There were some spikes in cancellation activities in the end of June and beginning of December too.
 
@@ -130,7 +130,7 @@ There are many calendar variables such as quarter, month, week, day, hour, minut
 \includegraphics[width=6in]{monthly_canrate.pdf}
 \end{center}
 \caption{\label{fig:monthlycanrate}
-Monthly cancellation rates in 2015.}
+Monthly cancellation rates.}
 \end{figure}
 There is no difference in cancellation rates between the origin and the destination airports in any given month. February was the worst followed by January and March. We see some mild spikes for June and December too. The high cancellation rate in January and February was mainly due to the snow storms in the east coast. We can also look at the day of the week and understand its influence on the cancellation rate in Fig. \ref{fig:weeklycanrate}. 
 \begin{figure}[h!]
@@ -148,7 +148,7 @@ End of the weekend and beginning of the week observed higher cancellation rates 
 \caption{\label{fig:hourlycanrate}
 Hourly cancellation rates throughout the day. Note the colors correspond to the same legend as in Fig.\ref{fig:monthlycanrate}.}
 \end{figure}
-For all scheduled departure hours, except between 2 - 3 AM, the cancellation rates are below $2\%$. We do not see any big spike in the case of scheduled arrival hours but the highest cancellation rate for arrival hour is seen between 3 - 4 AM which is one hour after the 2 - 3 AM time range. The reason for the spike at 2 AM for scheduled departure hour is the less number of flights at that time. Out of 110 flights scheduled to depart between 2-3 AM , 6 were canceled. This completes our brief discussion on calendar variables.
+For all scheduled departure hours, except between 2 - 3 AM, the cancellation rates are below $2\%$. We do not see any big spike in the case of scheduled arrival hours. Out of 210 flights scheduled to depart between 2-3 AM , 9 were cancelled, leading to spike at 2-3 AM red bar in the figure. This completes our brief discussion on calendar variables.
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Airports}
 \label{subsec:airports}
@@ -188,7 +188,7 @@ Flight distance is recorded in miles and is a continuous variable. For every num
 \caption{\label{fig:distancecanrate}
 Cancellation rates as a function of flight distance.}
 \end{figure}
-There is a data point for Distance = 21 miles for which the cancellation rate was 100$\%$. In order to see the clear trend for all other data points, we omitted the 21 miles point and replotted the data in the inset figure. We can see that the cancellation rates are higher for shorter distance flights and lower for longer distance flights. We performed a hypothesis test to test the null that there is no relationship between the distance and the cancellation rate. Using Spearman's $\rho$, we found a weak correlation of -0.34 which was statistically significant. 
+There is a data point for Distance = 21 miles for which the cancellation rate was 100$\%$. In order to see the clear trend for all other data points, we omitted the 21 miles point and replotted the data in the inset figure. We can see that the cancellation rates are higher for shorter distance flights and lower for longer distance flights. We performed a hypothesis test to test the null that there is no relationship between the distance and the cancellation rate. Using Spearman's $\rho$, we found a weak correlation of -0.39 which was statistically significant. 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Weather Factors}
 \label{subsec:weatherfactors}
@@ -204,7 +204,7 @@ Fig. \ref{fig:tempcanrate} displays the cancellation rate asa function of temper
 \caption{\label{fig:tempcanrate}
 Cancellation rate as a function of temperature. In the inset bar chart, y-axis is for the cancellation rate and $T$ represents temperature.}
 \end{figure}
-Humidity and wind speed have similar effects on cancellation rates as shown in Fig. \ref{fig:humwindcanrate} for both origin and destination locations. For very dry weather conditions (less than 10$\%$), there is a decreasing trend for cancellation rate. The rate then monotonically increase for humidity more than 20$\%$. For the monotonic part, we found statistically significant values of Spearman's correlation $\rho$ to be around 0.81 for origin and 0.86 for destination. 
+Humidity and wind speed have similar effects on cancellation rates as shown in Fig. \ref{fig:humwindcanrate} for both origin and destination locations. For very dry weather conditions (less than 10$\%$), there is a decreasing trend for cancellation rate. The rate then monotonically increase for humidity more than 20$\%$. For the monotonic part, we found statistically significant values of Spearman's correlation $\rho$ to be around 0.79 for origin and 0.82 for destination. 
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=6in]{humidity_windspeed_canrate.pdf}
@@ -231,7 +231,7 @@ Finally, we look at various weather conditions and find out the cancellation rat
 \caption{\label{fig:conditionscanrate}
 Cancellation rates under different weather conditions at origin and destination airports. The dashed vertical blue line indicates 10$\%$ cancellation rate line.}
 \end{figure}
-Cancellation rates are pretty high when there are snow related activities at both origin and destination airports. Rain with some thunderstorms also has high cancellation rates. There are similar top weather factors for both locations for cancellation rates greater than 10$\%$ (indicated by blue dashed line), with an exception such as ``Squalls" which has very low cancellation rate at destination and high rates at the origin airports. However, this observation is not significant as there are only 8 records for Squalls. Similarly, the cancellation rates are almost 0 when there are any type of hail conditions. Again, the number of records containing this condition is about 50-60, so this observation is also not significant.
+Cancellation rates are pretty high when there are snow related activities at both origin and destination airports. Rain with some thunderstorms also has high cancellation rates. There are similar top weather factors for both locations for cancellation rates greater than 10$\%$ (indicated by blue dashed line), with an exception such as ``Squalls" which has very low cancellation rate at destination and high rates at the origin airports. However, this observation is not significant as there are only 28 records for Squalls at origin. Similarly, the cancellation rates are almost 0 when there are any type of hail conditions. Again, the number of records containing this condition is 69 at origin, so this observation is also not significant.
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Historical Performances}
 \label{subsec:historical}
@@ -256,7 +256,7 @@ Sometimes, we come across a flight for which we do not find any history in the l
 \caption{\label{fig:historyindicatorcanrate}
 Cancellation rate comparisons for three different history indicators, and for all three ndays. The legend 10, 20 and 30 indicates different ndays.}
 \end{figure}
-There are also some flights for which the history tells that all the flights in last ndays got cancelled. The cancellation rates are slightly smaller when all flights got cancelled in the last ndays, as seen in Fig. \ref{fig:historyindicatorcanrate} (b). Similarly, there are flights for which there were 100$\%$ diverted flights in the last ndays. We found such cases only for ndays=10 and the cancellation rates are about 4 times higher as compared to the flights for which the history had no 100$\%$ diversions, as shown in Fig. \ref{fig:historyindicatorcanrate} (c).
+There are also some flights for which the history tells that all the flights in last ndays got cancelled. The cancellation rates are slightly higher when all flights got cancelled in the last ndays, as seen in Fig. \ref{fig:historyindicatorcanrate} (b). Similarly, there are flights for which there were 100$\%$ diverted flights in the last ndays. We found such cases only for ndays=10 and the cancellation rates are about 3 times higher as compared to the flights for which the history had no 100$\%$ diversions, as shown in Fig. \ref{fig:historyindicatorcanrate} (c).
 
 
 Now, we look at the influence of departure delays statistics on cancellation rates. Figure \ref{fig:depdelaymediancanrate} presents the cancellation rates for given median values of the departure delays in the last ndays. 
@@ -268,7 +268,7 @@ Now, we look at the influence of departure delays statistics on cancellation rat
 Cancellation rates as a function of the medians of departure delays in the last ndays. The legend 10, 20 and 30 indicates different ndays. The inset figure has the same x and y labels as the main figure.}
 \end{figure}
 
-Cancellation rates are 0 when the medians of departure delays in last ndays days were greater than 200 minutes. For less than 200 mins, and more specifically between 0 and 50 mins, there is a somewhat increasing cancellation rate as a function of median values, as displayed in the inset figure. Statistically significant correlations (Spearman's $\rho$ = 0.7, 0.61, 0.6, for ndays = 10, 20, 30, respectively) are found for all three ndays data in 0-50 mins range.  
+Cancellation rates are 0 (except a couple of instances) when the medians of departure delays in last ndays days were greater than 200 minutes. For less than 200 mins, and more specifically between 0 and 70 mins, there is a somewhat increasing cancellation rate as a function of median values, as displayed in the inset figure. Statistically significant correlations (Spearman's $\rho$ = 0.77, 0.69, 0.55, for ndays = 10, 20, 30, respectively) are found for all three ndays data in 0-70 mins range.  
 
 
 In a similar fashion, we can also look at the effect of medians of arrival delays in Fig. \ref{fig:arrdelaymediancanrate}.
@@ -279,7 +279,7 @@ In a similar fashion, we can also look at the effect of medians of arrival delay
 \caption{\label{fig:arrdelaymediancanrate}
 Cancellation rates as a function of the medians of arrival delays in the last ndays. The legend 10, 20 and 30 indicates different ndays. The inset figure has the same x and y labels as the main figure.}
 \end{figure}
-This scatter plot looks very similar to the one that we got for medians of departure delays. For more than 200 mins arrival delays, the cancellation rates are 0 for any ndays history. However, when we zoom-in the plot between -50 to 50 mins, we observe a non-monotonic behavior.   
+This scatter plot looks very similar to the one that we got for medians of departure delays. For more than about 200 mins arrival delays, the cancellation rates are 0 for any ndays history. However, when we zoom-in the plot between -50 to 50 mins, we observe a non-monotonic behavior.   
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Limitations}
 \label{sec:limit}
@@ -308,7 +308,7 @@ We have explored the original flight dataset along with the merged weather datas
 \item \textbf{Airlines:} Regional airlines like Envoy Air and ExpressJet Airlines had higher cancellation rates whereas Delta Airlines, Frontier Airlines and Alaska Airlines performed the best in terms of flight cancellations.
 \item \textbf{Flight distance:} The cancellation rates were higher for shorter distance flights and lower for longer distance flights.  
 \item \textbf{Weather factors:} Snowy weather is worst and clear sky or even cloudy weather conditions are best in terms of flight cancellation. We also found an increasing trend for cancellation rates as humidity and wind speed increased at both origin and destination airports. Cancellation rates were higher when the  temperatures were less than 40 $^\circ$F, as compared to temperatures greater than 40 $^\circ$F. Finally, we discovered an interesting trend with respect to the wind direction. The cancellation rates were close to 1$\%$ when the wind direction at both origin and destination airports were from East - to - South - to - West. However, we observed a jump in the cancellation rate as the wind direction approached close to North bound. 
-\item \textbf{Historical performances:}  In general, we found smaller cancellation rates for flights that got cancelled or diverted less in the last 10-30 days. However, when all the flights got cancelled in the last 10-30 days, the cancellation rate was better as compared to the cases when all flights were not cancelled. We investigated the cancellation rates for temporary flights (flights that ran only once in last 10-30 days) and found that temporary flights were more likely to cancelled than routine flights. Finally, we also looked at the effect of the history of departure and arrival delays on the cancellation rate of the flight in question and found some interesting trends for shorter range of delays. 
+\item \textbf{Historical performances:}  In general, we found smaller cancellation rates for flights that got cancelled or diverted less in the last 10-30 days. However, when all the flights got cancelled in the last 10-30 days, the cancellation rate was slightly higher as compared to the cases when all flights were not cancelled. We investigated the cancellation rates for temporary flights (flights that ran only once in last 10-30 days) and found that temporary flights were more likely to cancelled than routine flights. Finally, we also looked at the effect of the history of departure and arrival delays on the cancellation rate of the flight in question and found some interesting trends for shorter range of delays. 
 \end{enumerate}
 \end{document}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

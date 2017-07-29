@@ -1,0 +1,23 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Data Acquisition and Cleaning}{}% 2
+\BOOKMARK [1][-]{section.3}{Data Exploration}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{Introduction to the cleaned data}{section.3}% 4
+\BOOKMARK [2][-]{subsection.3.2}{Flight Cancellation Rate}{section.3}% 5
+\BOOKMARK [2][-]{subsection.3.3}{Calendar Variables}{section.3}% 6
+\BOOKMARK [2][-]{subsection.3.4}{Airports}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.5}{Airlines}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.6}{Flight Distance}{section.3}% 9
+\BOOKMARK [2][-]{subsection.3.7}{Weather Factors}{section.3}% 10
+\BOOKMARK [2][-]{subsection.3.8}{Historical Performances}{section.3}% 11
+\BOOKMARK [1][-]{section.4}{Modeling}{}% 12
+\BOOKMARK [2][-]{subsection.4.1}{Data Pre-processing}{section.4}% 13
+\BOOKMARK [2][-]{subsection.4.2}{Modeling Pipeline and Evaluation Metric}{section.4}% 14
+\BOOKMARK [2][-]{subsection.4.3}{Logistic Regression}{section.4}% 15
+\BOOKMARK [2][-]{subsection.4.4}{Gaussian Naive Bayes}{section.4}% 16
+\BOOKMARK [2][-]{subsection.4.5}{Random Forest}{section.4}% 17
+\BOOKMARK [2][-]{subsection.4.6}{Gradient Boosting}{section.4}% 18
+\BOOKMARK [2][-]{subsection.4.7}{Extremely Randomized Trees}{section.4}% 19
+\BOOKMARK [2][-]{subsection.4.8}{Model Comparisons}{section.4}% 20
+\BOOKMARK [1][-]{section.5}{Limitations}{}% 21
+\BOOKMARK [1][-]{section.6}{Other Data and Future Work}{}% 22
+\BOOKMARK [1][-]{section.7}{Conclusions}{}% 23

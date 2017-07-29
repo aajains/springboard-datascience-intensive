@@ -1,0 +1,24 @@
+\select@language {english}
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}
+\contentsline {section}{\numberline {2}Data Acquisition and Cleaning}{2}{section.2}
+\contentsline {section}{\numberline {3}Data Exploration}{3}{section.3}
+\contentsline {subsection}{\numberline {3.1}Introduction to the cleaned data}{3}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Flight Cancellation Rate}{3}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Calendar Variables}{5}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Airports}{7}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}Airlines}{7}{subsection.3.5}
+\contentsline {subsection}{\numberline {3.6}Flight Distance}{8}{subsection.3.6}
+\contentsline {subsection}{\numberline {3.7}Weather Factors}{8}{subsection.3.7}
+\contentsline {subsection}{\numberline {3.8}Historical Performances}{10}{subsection.3.8}
+\contentsline {section}{\numberline {4}Modeling}{12}{section.4}
+\contentsline {subsection}{\numberline {4.1}Data Pre-processing}{13}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Modeling Pipeline and Evaluation Metric}{14}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Logistic Regression}{15}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Gaussian Naive Bayes}{16}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}Random Forest}{17}{subsection.4.5}
+\contentsline {subsection}{\numberline {4.6}Gradient Boosting}{20}{subsection.4.6}
+\contentsline {subsection}{\numberline {4.7}Extremely Randomized Trees}{22}{subsection.4.7}
+\contentsline {subsection}{\numberline {4.8}Model Comparisons}{24}{subsection.4.8}
+\contentsline {section}{\numberline {5}Limitations}{25}{section.5}
+\contentsline {section}{\numberline {6}Other Data and Future Work}{26}{section.6}
+\contentsline {section}{\numberline {7}Conclusions}{27}{section.7}

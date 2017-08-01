@@ -22,20 +22,31 @@
 \usepackage{booktabs}
 \geometry{legalpaper, margin=1in}
 \usepackage{hyperref}
+\usepackage{makecell}
+\usepackage{caption} 
+\captionsetup[table]{skip=10pt}
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
     filecolor=magenta,      
     urlcolor=cyan,
 }
+\usepackage[dvipsnames]{xcolor}
+
 \newcommand{\gc}{\cellcolor{green}}
-\newcommand{\rc}{\cellcolor{red}}
+\newcommand{\rc}{\cellcolor{Red}}
+\newcommand{\yoc}{\cellcolor{YellowOrange}}
+\newcommand{\oc}{\cellcolor{Orange}}
+\newcommand{\sgc}{\cellcolor{SpringGreen}}
+\newcommand{\yc}{\cellcolor{yellow}}
+\newcommand{\tc}{\cellcolor{teal}}
 \urlstyle{same}
 %%%%%%%%%%%%%%%%%%%%%%%%%
+\pagenumbering{roman}
 \author{Aashish Jain}
 \title{Springboard Data Science Intensive Capstone Project - Predicting the Likelihood of Flight Cancellations}
 \begin{document}
-\setcounter{page}{-1}
+\setcounter{page}{-2}
 \maketitle
 \thispagestyle{empty}
 \thispagestyle{empty}
@@ -47,11 +58,12 @@
 \thispagestyle{empty}
 \newpage
 \large
+\pagenumbering{arabic}
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
 \label{Sec:intro}
 %%%%%%%%%%%%%%%%%%%%%%%%%
-Imagine you have a trip coming up in next few days and someone tells you that ``your flight has a high chance of being canceled, so be aware of that and rethink about your travel, hotel bookings, etc..". That would be helpful for you and all other passengers traveling out there. Even though the flight cancellation rate is not high (about 1-2$\%$ in the US domestic market), that one rare event causes a lot of troubles to passengers in terms of rescheduling their travel plans. There are many factors such as flight date and time, origin and destination airport, airline type, weather, etc.. which might affect the cancellation rate. We use data from various sources containing these factors and propose to build a machine learning model for predicting the likelihood of flight cancellation for US domestic flights operating at selected airports.
+Imagine you have a trip coming up in next few days and someone tells you that ``your flight has a high chance of being cancelled, so be aware of that and rethink about your travel, hotel bookings, etc..". That would be helpful for you and all other passengers traveling out there. Even though the annual flight cancellation rate is not high (about 1-2$\%$ in the US domestic market), that one rare event causes a lot of troubles to passengers in terms of rescheduling their travel plans. There are many factors such as flight date and time, origin and destination airport, airline type, weather, etc.. which might affect the cancellation rate. We use data from various sources containing these factors and build a supervised machine learning model for predicting the likelihood of flight cancellation for US domestic flights operating at selected airports.
 
 
 Travel planners and booking companies such as booking.com, expedia.com, kayak.com, priceline.com, etc. can use such a model to predict the likelihood of the cancellation of a flight. They can then inform their customers well in advance, even before the airlines' management informs the passengers, about the probability of the cancellation of their upcoming flight. From the traveler's point of view, it would be very convenient for them. On the other hand, such a predictive model would enhance the product base of travel planner companies. Moreover, there is a possibility of developing an app which travelers can use to know about their flight cancellation likelihood in advance.
@@ -79,7 +91,7 @@ Having the two datasets, we then merge them such that we get the weather informa
 There are 1,417,308 and 1,439,831 records for years 2015 and 2016, respectively, and 90 fields. In this project, we considered top 20 airports in the US (in terms of most traffic). These 20 airports network broadly covers the whole US as shown in Fig. \ref{fig:map}. 
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[width=6in]{map.pdf}
+\includegraphics[width=7in]{map.pdf}
 \end{center}
 \caption{\label{fig:map}
 Network of top 20 airports in the US. Note that there are two airports in the New York City: LGA and JFK.}
@@ -202,7 +214,7 @@ There is a data point for Distance = 21 miles for which the cancellation rate wa
 There are many weather factors such as temperature, dew point, pressure, wind speed, wind direction, humidity etc.. but we will focus on only some factors here to keep the discussion short. A detailed data exploration can be found in \href{https://github.com/aajains/springboard-datascience-intensive/blob/master/capstone_project/EDA/ExploratoryDataAnalysis.ipynb}{this IPython notebook}. 
 
 
-Fig. \ref{fig:tempcanrate} displays the cancellation rate asa function of temperature at both origin and destination (at the time of departure and arrival, respectively). There appears to be two broad temperature regimes here in terms of cancellation rates. The cancellation rates are four times higher when the temperatures are below 40 $^\circ$F as compared to the situations when temperatures above 40 $^\circ$F. which can be clearly seen in the inset figure. 
+Fig. \ref{fig:tempcanrate} displays the cancellation rate asa function of temperature at both origin and destination (at the time of departure and arrival, respectively). There appears to be two broad temperature regimes here in terms of cancellation rates. The cancellation rates are four times higher when the temperatures are below 40$^\circ$F as compared to the situations when temperatures above 40$^\circ$F. which can be clearly seen in the inset figure. 
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=6in]{temperature_canrate.pdf}
@@ -290,7 +302,7 @@ This scatter plot looks very similar to the one that we got for medians of depar
 \section{Modeling}
 \label{sec:models}
 %%%%%%%%%%%%%%%%%%%%%%%%%
-Knowing the labels for flight cancellations, i.e. 0 for not cancelled and 1 for cancelled, we use supervised machine learning algorithms to build a predictive model. Furthermore, since there are only two outcomes (or classes) in the data (0 and 1), we use binary classification algorithms. The models are trained using the 50$\%$ of the data and the remaining 50$\%$ is used to evaluate the performance of the models. Out of about 2.85 millions flights in 2015-2016, only about 1.15$\%$ flights got cancelled, hence we have a highly imbalanced data. Mostly, all standard algorithms are not well suited for learning with highly imbalanced data. The reason for this difficulty is that the learning in most algorithms is biased towards the majority class. In other words, for highly imbalanced data set, the classification algorithms fail to predict positive class in reasonable numbers. To address this issue, either training data is resampled so that the learning algorithm gets balanced data and learns to predict both classes reasonably well, or the training data is weighted more for minority class and less for majority class. Not only this resampling matters but also the evaluation metric to measure the performance of the model plays a vital role. For example, the accuracy can be really high even if none of the minority class examples are predicted. There are many different types of evaluation metrics that are appropriate for imbalanced classes. Shortly, we will go through some classification algorithms and build predictive models by keeping the imbalanced data challenge issue in our mind. 
+Knowing the labels for flight cancellations, i.e. 0 for not cancelled and 1 for cancelled, we use supervised machine learning algorithms to build a predictive model. Furthermore, since there are only two outcomes (or classes) in the data (0 and 1), we use binary classification algorithms. The models are trained using the 50$\%$ of the data and the remaining 50$\%$ is used to evaluate the performance of the models. Out of about 2.85 millions flights in 2015-2016, only about 1.15$\%$ flights got cancelled, hence we have a highly imbalanced data. Mostly, all standard algorithms are not well suited for learning with highly imbalanced data. The reason for this difficulty is that the learning in most algorithms is biased towards the majority class. In other words, for highly imbalanced dataset, the classification algorithms fail to predict positive class in reasonable numbers. To address this issue, either training data is resampled so that the learning algorithm gets balanced data and learns to predict both classes reasonably well, or the training data is weighted more for minority class and less for majority class. Not only this resampling matters but also the evaluation metric to measure the performance of the model plays a vital role. For example, the accuracy can be really high even if none of the minority class examples are predicted. There are many different types of evaluation metrics that are appropriate for imbalanced classes. Shortly, we will go through some classification algorithms and build predictive models by keeping the imbalanced data challenge issue in our mind. 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Data Pre-processing}
 \label{sec:preproc}
@@ -298,9 +310,9 @@ Knowing the labels for flight cancellations, i.e. 0 for not cancelled and 1 for 
 Before feeding the data into any machine learning algorithms, there are some pre-processing steps that must be performed on the data. We outline these steps below. Note that some of the steps are not required (or not good for the best results) in some algorithms, but we list below all the pre-processing steps (in order that they are performed) that we used across all classification algorithms in this work:
 
 \begin{enumerate}  
-\item \textbf{Label encoding:} In the dataset, there are some variables with numerical values, some variables with categories and some variables with binary values (0 and 1). For numerical and binary variables, we do not worry about labelling. However, we perform label encoding for the categorical variables. This step is carried out on the whole dataset. 
+\item \textbf{Label encoding:} In the dataset, there are some variables with numerical values, some variables with categories and some variables with binary values (0 and 1). For numerical and binary variables, we do not worry about labeling. However, we perform label encoding for the categorical variables. This step is carried out on the whole dataset. 
 \item \textbf{Data splitting:} The second step involves splitting the label encoded dataset into train and test datasets. In this project we split them equally with 50$\%$-50$\%$ ratio. Also, we split them in such a manner that the fractions of both classes remain almost same in train and test datasets.
-\item \textbf{Resampling or weighting:} In the third step, we take care of the imbalanced data issue by addressing it at the data level by either resampling or weighting the training dataset. Resampling may involve undersampling the majority class examples or oversampling the minority class examples. One can also use the combinations of under and over sampling techniques. There also exists Synthetic Minority Oversampling Technique (SMOTE) which generates synthetic training data for minority class examples by using interpolations. Sometimes, rather than resampling, weighting the training samples works best. In the weighting technique, more weights are given to minority class examples. Different resampling techniques and weighting techniques work best for different algorithms, so we try few different techniques with all the classification algorithms in this project and pick the best ones.  
+\item \textbf{Resampling or weighting:} In the third step, we take care of the imbalanced data issue by addressing it at the data level by either resampling or weighting the training dataset. Resampling may involve under-sampling the majority class examples or oversampling the minority class examples. One can also use the combinations of under and over sampling techniques. There also exists Synthetic Minority Oversampling Technique (SMOTE) which generates synthetic training data for minority class examples by using interpolations. Sometimes, rather than resampling, weighting the training samples works best. In the weighting technique, more weights are given to minority class examples. Different resampling techniques and weighting techniques work best for different algorithms, so we try few different techniques with all the classification algorithms in this project and pick the best ones.  
 \item \textbf{Scaling:} For some algorithms, it is necessary that we scale the values of all features to lie within a fixed range. We scale features such that all features have values between 0 and 1. 
 \end{enumerate}
 
@@ -309,13 +321,10 @@ After scaling the features, we can also reduce the feature space by selecting fe
 \subsection{Modeling Pipeline and Evaluation Metric}
 \label{sec:pipe}
 %%%%%%%%%%%%%%%%%%%%%%%%%   
-Once the data is pre-processed, we feed them to classification algorithm to build the model. In order to evaluate the performance of the model, we test the model on the test data set. Before making predictions on test dataset, we use the exact same pre-processing steps that we used for training dataset and apply them on the test dataset. Python's scikit learn library has a very useful class called ``pipeline" which we use to combine all the steps, i.e. pre-processing and classifier learning steps into one. This pipeline is then applied directly on the test dataset. Let us now go through each models that we used in this project. Note that for some algorithms, training the 50$\%$ of the data, which is about 1.4 million examples, is very slow. For such algorithms, we first consider only the 10$\%$ of the whole data. We then follow the pre-processing steps on the 10$\%$ of the data. Once we know the optimal hyperparameters  and the best resampling/weighting technique, we then use the whole data to build the model. For tuning hyper-parameters we use 5-fold cross validation with grid search method in sklearn. We run the cross validation to obtain the optimal hyperparameters for all considered resampling/weighting techniques. 
+Once the data is pre-processed, we feed them to classification algorithm to build the model. In order to evaluate the performance of the model, we test the model on the test dataset. Before making predictions on test dataset, we use the exact same pre-processing steps that we used for training dataset and apply them on the test dataset. Python's scikit learn library has a very useful class called ``pipeline" which we use to combine all the steps, i.e. pre-processing and classifier learning steps into one. This pipeline is then applied directly on the test dataset. Note that for some algorithms, training the 50$\%$ of the data, which is about 1.4 million examples, is very slow. For such algorithms, we first consider only the 10$\%$ of the whole data. We then follow the pre-processing steps on the 10$\%$ of the data. Once we know the optimal hyperparameters  and the best resampling/weighting technique, we then use the whole data to build the model. For tuning hyper-parameters we use 5-fold cross validation with grid search method in scikit learn. We run the cross validation to obtain the optimal hyperparameters for all considered resampling/weighting techniques. 
 
 
-One more important consideration while performing cross validation is the selection of a proper evaluation metric. Especially, for imbalanced data, it is important to be careful about the choice of the evaluation metric. Our aim is to predict the flight cancellation likelihood with data containing only about 1.14$\%$ of the cancelled flights in 2015-2016. Accuracy is not a good metric for such datasets. We definitely want to have high true positive rate (or recall) with cancelled flight tagged as positive class. At the same time, we do not want lots of false positives or less precision. Most of the time, the choice of a good metric depends on business needs. In this project, we keep in mind all elements of a confusion matrix. Also, we want a metric which is threshold invariant, so F1-score is also not a great choice. There are two popular metrics such as area under the curve (AUC) of receiver operating characteristic (ROC) curve and AUC of precision recall (OR) curve. \href{http://ftp.cs.wisc.edu/machine-learning/shavlik-group/davis.icml06.pdf}{Theoretically}, ROC curves are useful in an algorithm that optimizes PR AUC. Also, \href{http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0118432}{T. Saito and M. Rehmsmeier} found that for imbalanced data, precision recall curve is more informative than ROC curve.
-
-
-So, we will stick with PR AUC as our scoring parameter for tuning hyperparameters.
+One more important consideration while performing cross validation is the selection of a proper evaluation metric. Especially, for imbalanced data, it is important to be careful about the choice of the evaluation metric. Our aim is to predict the flight cancellation likelihood with data containing only about 1.14$\%$ of the cancelled flights in 2015-2016. Accuracy is not a good metric for such datasets. We definitely want to have high true positive rate (or recall) with cancelled flight tagged as positive class. At the same time, we do not want lots of false positives or less precision. Most of the time, the choice of a good metric depends on business needs. In this project, we keep in mind all elements of a confusion matrix. Also, we want a metric which is threshold invariant, so F1-score is also not a great choice. There are two popular metrics such as area under the curve (AUC) of receiver operating characteristic (ROC) curve and AUC of precision recall (PR) curve. \href{http://ftp.cs.wisc.edu/machine-learning/shavlik-group/davis.icml06.pdf}{Theoretically}, ROC curves are useful in an algorithm that optimizes PR AUC. Also, \href{http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0118432}{T. Saito and M. Rehmsmeier} found that for imbalanced data, precision recall curve is more informative than ROC curve. So, we will stick with PR AUC as our scoring parameter for tuning hyperparameters.
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Logistic Regression}
 \label{sec:LR}
@@ -350,7 +359,7 @@ No resampling, using weighting (10$\%$) & 0 & 0.99 & 1.00 & 0.99 & 0.51 & 0.50 &
 \end{tabular}
 }
 \end{table}
-We found, using 10$\%$ of the whole data, that all techniques led to very poor model. However, the random under sampling technique (RandomUnderSampler in sklearn) spent least computational time. So, we used random undersampling technique and build the classifier using the whole data (1.4+ million examples in training dataset). This model is represented as final model and colored in green in Tab. \ref{tab:LR}, and the ROC and PR curves are shown in Fig. \ref{fig:LR} . 
+We found, using 10$\%$ of the whole data, that all techniques led to very poor model. However, the random under sampling technique (RandomUnderSampler in scikit learn) spent least computational time. So, we used random under-sampling technique and build the classifier using the whole data (1.4+ million examples in training dataset). This model is represented as final model and colored in green in Tab. \ref{tab:LR}, and the ROC and PR curves are shown in Fig. \ref{fig:LR} . 
 \begin{figure}[!h]
 \begin{center}
 \includegraphics[width=6in]{LR_ROC_PR_plots.pdf}
@@ -363,7 +372,7 @@ Testing on the holdout data (50$\%$ of the whole data) gave us the same poor res
 \subsection{Gaussian Naive Bayes}
 \label{sec:NB}
 %%%%%%%%%%%%%%%%%%%%%%%%%   
-We use Gaussian Naive Bayes classifier and the first three steps of the pre-processing steps mentioned in Sec. \ref{sec:preproc}. This algorithm is not that slow so we use the whole dataset and split that into train and test (holdout) datasets with 50$\%$-50$\%$ ratio. Table \ref{tab:GNB} shows the results for various metrics for all different resampling techniques that we tried. Note that the Naive Bayes classification implementation in sklearn does not have any option for weighting the classes. So, here we try only two resampling techniques. 
+We use Gaussian Naive Bayes classifier and the first three steps of the pre-processing steps mentioned in Sec. \ref{sec:preproc}. This algorithm is not that slow so we use the whole dataset and split that into train and test (holdout) datasets with 50$\%$-50$\%$ ratio. Table \ref{tab:GNB} shows the results for various metrics for all different resampling techniques that we tried. Note that the Naive Bayes classification implementation in scikit learn does not have any option for weighting the classes. So, here we try only two resampling techniques. 
 \begin{table}[!h]
 \centering
 \caption{Gaussian Naive Bayes classifier - choosing the best resampling technique }\label{tab:GNB}
@@ -393,7 +402,7 @@ Both resampling techniques give PR AUC to be 0.08, which is very poor. However, 
 \caption{\label{fig:GNB}
 ROC and PR curves for the Gaussian Naive Bayes classifier.}
 \end{figure}
-As far as ROC curves are concerned, Gaussian Naive Bayes is better than logistic regression. The reason PR AUC is so much smaller than ROC AUC is because the ROC curve has information about true negatives which dominate the confusion matrix in the current problem, especially in the bottom left of ROC curve or for very high values of thresholds. We will discuss more about the thresholds and optimum operating point when we compare various models.  
+As far as ROC curves are concerned, Gaussian Naive Bayes is better than logistic regression. The reason PR AUC is so much smaller than ROC AUC is because the ROC curve has information about true negatives which dominate the confusion matrix in the current problem, especially in the bottom left of ROC curve or for very high values of thresholds. 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Random Forest}
 \label{sec:RF}
@@ -583,10 +592,10 @@ The ET classifier gives us the best model so far. In the next section, we compar
 \subsection{Model Comparisons}
 \label{sec:modelcomp}
 %%%%%%%%%%%%%%%%%%%%%%%%%
-We have used logistic regression, naive bayes, random forest, gradient boosting and extra randomized trees classifiers to build a model to predict flight cancellation likelihood. Based on testing the models on the holdout dataset (50$\%$ of the whole data), we found different performance of all models. The results of various evaluation metrics scores are shown in Tab. \ref{tab:modelcomp} for all models. 
+We have used Logistic Regression, Gaussian Naive Bayes, Random Forest, Gradient Boosting and Extra Randomized Trees classifiers to build a model to predict flight cancellation likelihood. Based on testing the models on the holdout dataset (50$\%$ of the whole data), we found different performance of all models. The results of various evaluation metrics scores are shown in Tab. \ref{tab:modelcomp} for all models. 
 \begin{table}[!h]
 \centering
-\caption{Comparing all models}\label{tab:modelcomp}
+\caption{Comparing all models: Red for the worst and green for the best model.}\label{tab:modelcomp}
 \scalebox{1}{
 \begin{tabular}{lcccccc}
 \toprule
@@ -617,17 +626,15 @@ Other than PR AUC and ROC AUC, we also calculated Brier's score (similar to mean
 \includegraphics[width=6in]{AllModels_ROC_PR_plots.pdf}
 \end{center}
 \caption{\label{fig:AllModels}
-Comparing ROC and PR curves for all models. LR: Logistic Regression, GNB: Gaussian Naive Bayes, RF: Random Forest, GB: Gradient Boosting, ET: Extremely Randomized Treees.}
+Comparing ROC and PR curves for all models. LR: Logistic Regression, GNB: Gaussian Naive Bayes, RF: Random Forest, GB: Gradient Boosting, ET: Extremely Randomized Trees.}
 \end{figure}
+Though the best model i this work has ROC AUC of 0.89, the PR AUC is pretty low. As discussed before, the reason for high ROC AUC is due to dominant nature of true negatives (which is absent in case of PR curves). 
 
 
-
-Undersampled test data:
-
-
+As an alternative, we also tried to calculate different metrics on a ``balanced" test data. In order to get the balanced test data, we picked only the positive examples from the test dataset (holdout dataset) and and equal number of negative examples. This under-sampled test dataset is significantly smaller subset. Calculating various performance metrics on this under-sampled data may not seem a correct approach but we want to see if doing so makes the results different. We compare the results for all models, based on under-sampled test data, in Tab. \ref{tab:modelcompu}. 
 \begin{table}[!h]
 \centering
-\caption{Comparing all models when test data is undersampled}\label{tab:modelcomp}
+\caption{Comparing all models when test data is under-sampled: Red for the worst and green for the best model.}\label{tab:modelcompu}
 \scalebox{1}{
 \begin{tabular}{lcccccc}
 \toprule
@@ -652,43 +659,167 @@ Gradient Boosting & 0.89 & 0.87 & 0.39 & 5.69 \\
 \end{tabular}
 }
 \end{table}
-
+AUC for both ROC and PR are much better for all models, however, the ET model again performs the best with PR AUC = 0.91 and ROC AUC = 0.89. Corresponding ROC and PR curves are shown in Fig. \ref{fig:AllModelsUndersampledTest}. 
 \begin{figure}[!h]
 \begin{center}
 \includegraphics[width=6in]{UndersampledTestDataAllModels_ROC_PR_plots.pdf}
 \end{center}
 \caption{\label{fig:AllModelsUndersampledTest}
-Comparing ROC and PR curves for all models when test data is undersampled. LR: Logistic Regression, GNB: Gaussian Naive Bayes, RF: Random Forest, GB: Gradient Boosting, ET: Extremely Randomized Treees.}
+Comparing ROC and PR curves for all models when test data is under-sampled. LR: Logistic Regression, GNB: Gaussian Naive Bayes, RF: Random Forest, GB: Gradient Boosting, ET: Extremely Randomized Trees.}
 \end{figure}
+Using under-sampled test data to calculate all performance metrics, we obtained much better values for PR and ROC AUC but the best model is ET model only. 
 %%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Limitations}
+\section{Using Model and Recommendations}
+\label{sec:reco}
+%%%%%%%%%%%%%%%%%%%%%%%%%
+We now briefly discuss about using the best model to predict flight cancellation likelihood. To make predictions on new data, one would need to filter out some features and then perform OHE on categorical features. Other than these feature processing steps, all other pre-processing steps are stored in the model pipeline. Table \ref{tab:finalfeatures} contains the list of all 31 features that we need to feed to the ET classification model. The table is sorted by the feature importance values obtained from the ET model, with highest on the top.
+\begin{table}[!h]
+\centering
+\caption{Final set of features for the ET model}\label{tab:finalfeatures}
+\scalebox{0.85}{
+\begin{tabular}{lccclccc}
+\toprule
+\textbf{Features} & \textbf{Source type} & \textbf{Data type} & \textbf{OHE required?} & \textbf{Description}  \\
+\midrule
+Month\_Dest  & Flight data & Categorical & Yes & \pbox{10cm}{Month at destination}  \\ 
+\addlinespace
+Month  & Flight data & Categorical & Yes & \pbox{10cm}{Month at origin}  \\ 
+\addlinespace
+Humidity\_Origin  & Weather data & Numerical & No & \pbox{10cm}{Humidity at origin ($\%$)}   \\ 
+\addlinespace
+Humidity\_Dest  & Weather data & Numerical & No & \pbox{10cm}{Humidity at destination ($\%$)}  \\ 
+\addlinespace
+Ncan\_30  &Flight history data & Numerical & No & \pbox{10cm}{Number of cancellations \\ in last 30 days}  \\ 
+\addlinespace
+Temperature\_Dest  & Weather data & Numerical & No & \pbox{10cm}{Temperature at destination ($^\circ$F)}  \\ 
+\addlinespace
+Carrier  & Flight data & Categorical & Yes & Airline carrier \\
+\addlinespace
+DayOfMonth\_Dest  & Flight data & Categorical & Yes & \pbox{10cm}{Day of month \\ at destination}  \\ 
+\addlinespace
+Temperature\_Origin  & Weather data & Numerical & No & \pbox{10cm}{Temperature at origin ($^\circ$F)}  \\ 
+\addlinespace
+DayOfMonth  & Flight data & Categorical & Yes & \pbox{10cm}{Day of month at origin}  \\ 
+\addlinespace
+Ncan\_20  & Flight history data & Numerical & No & \pbox{10cm}{Number of cancellations \\ in last 20 days}  \\ 
+\addlinespace
+DewPoint\_Origin  & Weather data & Numerical & No & \pbox{10cm}{Dew point at origin ($^\circ$F)}  \\ 
+\addlinespace
+Visibility\_Origin  & Weather data & Numerical & No & \pbox{10cm}{Visibility at origin (miles)}  \\ 
+\addlinespace
+Distance  & Flight data & Numerical & No & \pbox{10cm}{Flight distance (miles)}  \\ 
+\addlinespace
+DewPoint\_Dest  & Weather data & Numerical & No & \pbox{10cm}{Dew point at destination ($^\circ$F)}  \\ 
+\addlinespace
+Visibility\_Dest  & Weather data & Numerical & No & \pbox{10cm}{Visibility at destination (miles)}  \\ 
+\addlinespace
+DayOfWeek  & Flight data & Categorical & Yes & \pbox{10cm}{Day of week at origin}  \\ 
+\addlinespace
+DayOfWeek\_Dest  & Flight data & Categorical & Yes & \pbox{10cm}{Day of week at destination}  \\ 
+\addlinespace
+Ncan\_10  & Flight history data & Numerical & No & \pbox{10cm}{Number of cancellations \\ in last 10 days}  \\ 
+\addlinespace
+Origin  & Flight data & Categorical & Yes & \pbox{10cm}{Origin airport} \\
+\addlinespace
+Dest  & Flight data & Categorical & Yes & \pbox{10cm}{Destination airport} \\
+\addlinespace
+WindDirection\_Origin  & Weather data & Numerical & No & \pbox{10cm}{Wind direction at origin (degrees)} \\
+\addlinespace
+WindSpeed\_Origin  & Weather data & Numerical & No & \pbox{10cm}{Wind speed at origin (mph)} \\
+\addlinespace
+WindDirection\_Dest  & Weather data & Numerical & No & \pbox{10cm}{Wind direction at destination (degrees)} \\
+\addlinespace
+Condition\_Origin  & Weather data & Categorical & Yes & \pbox{10cm}{Weather condition at origin} \\
+\addlinespace
+WindSpeed\_Dest  & Weather data & Numerical & No & \pbox{10cm}{Wind speed at destination (mph)} \\
+\addlinespace
+Condition\_Dest  & Weather data & Categorical & Yes & \pbox{10cm}{Weather condition at destination} \\
+\addlinespace
+Pressure\_Origin  & Weather data & Numerical & No & \pbox{10cm}{Pressure at origin (inHg)}  \\ 
+\addlinespace
+CRSDepHr  & Flight data & Categorical & Yes & \pbox{10cm}{Scheduled departure hour}  \\ 
+\addlinespace
+Pressure\_Dest  & Weather data & Numerical & No & \pbox{10cm}{Pressure at destination (inHg)}  \\ 
+\addlinespace
+CRSArrHr  & Flight data & Categorical & Yes & \pbox{10cm}{Scheduled arrival hour}  \\ 
+\bottomrule \\
+\end{tabular}
+}
+\end{table}
+There are some features such as Ncan\_10, Ncan\_20 and Ncan\_30 that are originally not present in either the flight dataset or weather dataset. We engineered these features by accounting for historical performances of flights. So, one would need to calculate these features beforehand. Some features are categorical, so one needs to perform OHE on them. After OHE, the number of features are 295. Once the features are ready including OHE, the ET model can be run on the new dataset and predictions can be made.
+
+
+We now discuss little bit about recommending some ideas to potential clients. Since we are only interested in predicting the probabilities of both negative and positive classes, we do not bother about the choice of thresholds or operating point in Figs \ref{fig:AllModels} and \ref{fig:AllModelsUndersampledTest}. The ET model would give us the probabilities of both classes. These probability values can then be used to make categories to indicate different levels of warning or alert messages. For example, if p(cancelled) is the probability of a flight being cancelled, then we can have a categorization like the one shown in Tab. \ref{tab:alertexample}.  
+\begin{table}[!h]
+\centering
+\caption{An example of a possible categorization of alerts messages to indicate flight cancellation chances}\label{tab:alertexample}
+\scalebox{1.0}{
+\begin{tabular}{lcccccc}
+\toprule
+\textbf{Probability ranges} & \textbf{Alert messages}  \\
+\midrule
+\rc p(cancelled)  > 0.9 & \rc  Extremely high chance  \\ 
+\oc 0.75 < p(cancelled) $\leq$ 0.9 & \oc Very high chance \\ 
+\yoc 0.5 < p(cancelled) $\leq$ 0.75 & \yoc High chance \\ 
+\yc 0.25 < p(cancelled) $\leq$ 0.5 & \yc Moderate chance \\ 
+\sgc 0.1 < p(cancelled) $\leq$ 0.25 & \sgc Low chance  \\
+\gc p(cancelled) $\leq$ 0.1 & \gc Very low chance \\  
+\bottomrule \\
+\end{tabular}
+}
+\end{table}
+We can recommend such a categorization to different clients, whether it is a booking website or for an app, depending on their business model and requirements. 
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Assumptions and Limitations}
 \label{sec:limit}
 %%%%%%%%%%%%%%%%%%%%%%%%%
-There are some limitations in the data which would reduce the robustness of the machine learning model that we will develop.
+The flight and weather data are in time series format. It is likely that there are some correlations for a given flight between two times. In this project, we assume that all flights are independent, i.e. there are no correlations. This assumption makes the problem little bit easier to implement various models that we used. Other than this assumption, we have several limitations in the data which might have reduced the robustness of the machine learning model that we developed.
 \begin{enumerate}
 \itemsep0em
 \item We have considered only 20 airports in this project due to weather data provider's API restrictions. Though 20 airports broadly cover the whole US, a lot of information will not be learned by the model due to the absence of all airports in the dataset. 
-\item The prediction of the model will depend on how good the prediction of the weather is, say after 3 days. In other words. if we want to predict the likelihood of the flight cancellation for a flight which is scheduled after 3 days, we would need to know the weather after 3 days (which we do not know ``accurately" today). This means that the model will predict better if the weather prediction is better or if we are trying to predict the flights not far ago than the scheduled departure.
-\item Apart from knowing whether a flight was cancelled, we also have information about the cancellation codes such as A, B, C, D. Most probably these codes correspond to different reasons or factors for cancellation. However, other than just knowing these codes, we do not know the exact meanings of these codes. If the exact meanings were known, we would have built a multi-class classification model. Lack of this information restricts us to develop a binary classifier only.  
+\item For new data, the prediction of the model will depend on how good the prediction of the weather is, say after 3 days. In other words. if we want to predict the likelihood of the flight cancellation for a flight which is scheduled after 3 days, we would need to know the weather after 3 days (which we do not know ``accurately" today). This means that the model will predict better if the weather prediction is better or if we are trying to predict the flights not far ago than the scheduled departure.
+\item Apart from knowing whether a flight was cancelled, we also have information about the cancellation codes such as A, B, C, D. Most probably these codes correspond to different reasons or factors for cancellation. However, other than just knowing these codes, we do not know the exact meanings of these codes. If the exact meanings were known, we would have built a multi-class classification model. Lack of this information restricted us to develop a binary classifier only.  
 \item We found that SunCountry Airline (IATA code: SY) data is missing in the original flight dataset which we acquired from the \href{https://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time}{Bureau of Transportation Statistics}. We checked for the absence of only this airline from a personal travel experience. It is possible that some other data might also be missing in the original dataset. Therefore, we emphasize that the analysis carried out in this project is only based on the data source that we mentioned here. 
 \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Other Data and Future Work}
 \label{sec:otherdata}
 %%%%%%%%%%%%%%%%%%%%%%%%%
-Other than the original flight data, weather data and historical performance data, we can also acquire or feature engineer more datasets which might enhance the predictive power of the machine learning model. Knowing the airport name, we can extract informations such as number of runways, runway length (and width), airport type, airport infrastructure, airport capacity etc.., and create new features. Similarly, knowing the airlines names, we can extract airlines ratings, their stock market performance, their revenue and assets, reputations etc.., and create new fields. We can also get data from social networking sites and news media about the sentiment for each airlines and airports. The sentiment analysis can then be used to create more features. Datasets containing world events such as catastrophic natural destruction, terror attacks, political movement, sport tournaments, etc.. can also be acquired and used to merge with our original datasets. Each one of these ideas can be difficult if the data is not easily accessible. However, we believe that the predictive power of the model will be improved by incorporating these factors.  
+Other than the original flight data, weather data and historical performance data, we can also acquire or feature engineer more datasets which might enhance the predictive power of the machine learning model. Following is a list of some possibilities:
+\begin{enumerate}
+\item Knowing the airport name, we can extract informations such as number of runways, runway length (and width), airport type, airport infrastructure, airport capacity etc.., and create new features. 
+\item Similarly, knowing the airlines names, we can extract airlines ratings, their stock market performance, their revenue and assets, reputations etc.., and create new fields. 
+\item In terms of historical performances, we only engineered some features for airline historical performances. We can also engineer some features to get airport historical performance data. 
+\item We can also get data from social networking sites and news media about the sentiment for each airlines and airports. The sentiment analysis can then be used to create more features. 
+\item Datasets containing world events such as catastrophic natural destruction, terror attacks, political movement, sport tournaments, etc.. can also be acquired and used to merge with our original datasets. 
+\end{enumerate}
+Each one of these ideas can be difficult if the data is not easily accessible. However, we believe that the predictive power of the model will be improved by incorporating these factors.  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusions}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-We have explored the original flight dataset along with the merged weather datasets and engineered historical performance variables, to understand their influence on the flight cancellation rates. Top 20 airports (in terms of the number of flights operating) were considered in this work for the year 2015. The overall cancellation rate was about 1.28$\%$, which is not a large number but that is what makes the project more interesting. We explored 6 types of informations available in the datasets and found that most of them influence cancellation rates. Following is a quick summary of our findings:
+In this project, we first explored the original flight dataset along with the merged weather datasets and engineered historical performance variables, to understand their influence on the flight cancellation rates. Top 20 airports (in terms of the number of flights operating) were considered in this work for the years 2015 - 2016. The overall cancellation rate was about 1.28$\%$, which is not a large number but that is what makes the project more interesting. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Data Exploration Conclusions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+We explored 6 types of informations available in the datasets and found that most of them influence cancellation rates. Following is a quick summary of the exploratory data analysis:
 \begin{enumerate}
 \itemsep0em
 \item \textbf{Calendar variables:} Most flights were cancelled in the winter months and least in the falls months. We also found that the cancellations are worst in the end and beginning of a week.
 \item \textbf{Airports:} Usually the airports in the east coast had higher cancellation rates as compared to the rest of the nation. LaGuardia and Boston airports topped the list and Salt Lake City and Seattle were bottom in the list of cancellation rates. 
 \item \textbf{Airlines:} Regional airlines like Envoy Air and ExpressJet Airlines had higher cancellation rates whereas Delta Airlines, Frontier Airlines and Alaska Airlines performed the best in terms of flight cancellations.
 \item \textbf{Flight distance:} The cancellation rates were higher for shorter distance flights and lower for longer distance flights.  
-\item \textbf{Weather factors:} Snowy weather is worst and clear sky or even cloudy weather conditions are best in terms of flight cancellation. We also found an increasing trend for cancellation rates as humidity and wind speed increased at both origin and destination airports. Cancellation rates were higher when the  temperatures were less than 40 $^\circ$F, as compared to temperatures greater than 40 $^\circ$F. Finally, we discovered an interesting trend with respect to the wind direction. The cancellation rates were close to 1$\%$ when the wind direction at both origin and destination airports were from East - to - South - to - West. However, we observed a jump in the cancellation rate as the wind direction approached close to North bound. 
+\item \textbf{Weather factors:} Snowy weather is worst and clear sky or even cloudy weather conditions are best in terms of flight cancellation. We also found an increasing trend for cancellation rates as humidity and wind speed increased at both origin and destination airports. Cancellation rates were higher when the  temperatures were less than 40$^\circ$F, as compared to temperatures greater than 40$^\circ$F. Finally, we discovered an interesting trend with respect to the wind direction. The cancellation rates were close to 1$\%$ when the wind direction at both origin and destination airports were from East - to - South - to - West. However, we observed a jump in the cancellation rate as the wind direction approached close to North bound. 
 \item \textbf{Historical performances:}  In general, we found smaller cancellation rates for flights that got cancelled or diverted less in the last 10-30 days. However, when all the flights got cancelled in the last 10-30 days, the cancellation rate was slightly higher as compared to the cases when all flights were not cancelled. We investigated the cancellation rates for temporary flights (flights that ran only once in last 10-30 days) and found that temporary flights were more likely to cancelled than routine flights. Finally, we also looked at the effect of the history of departure and arrival delays on the cancellation rate of the flight in question and found some interesting trends for shorter range of delays. 
 \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Modeling Conclusions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+After exploring all datasets, we used five different supervised classification algorithms (Logistic Regression, Gaussian Naive Bayes, Random Forest, Gradient Boosting and Extremely Randomized Trees) to train the predictive model by using 50$\%$ of the whole data. The remaining 50$\%$ was used to evaluate the model. 
+\begin{enumerate}
+\item Using various performance evaluation metrics, we found that the Extremely Randomized Trees classifier gives the the best model performance. 
+\item We achieved the ROC AUC to be about 0.89. The AUC for PR was not great (about 0.38) but when we ran the model on a balanced test dataset (which we obtained by under- sampling the test data), we got PR AUC to be about 0.91. 
+\item In terms of features, we found that we do not need all the features that we collected from different data sources. In fact, we needed only 31 features, of which 12 were from flight data, 16 were from weather data and 3 were from flight historical performances data (which we engineered). 
+\end{enumerate}
+The model is decent enough to be used for predicting the likelihood of flight cancellations. As mentioned in Sec. \ref{sec:limit}, there are some limitations in the current model such as lack of complete data, poor predictions for flights that are not scheduled to depart very soon in future, and also assuming no time-correlation between flights. By overcoming these limitations and incorporating some of the ideas mentioned in Sec. \ref{sec:otherdata}, the model can further be improved and we leave it for the future work.    
 \end{document}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

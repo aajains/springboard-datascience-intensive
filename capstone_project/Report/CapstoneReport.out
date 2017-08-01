@@ -18,6 +18,9 @@
 \BOOKMARK [2][-]{subsection.4.6}{Gradient Boosting}{section.4}% 18
 \BOOKMARK [2][-]{subsection.4.7}{Extremely Randomized Trees}{section.4}% 19
 \BOOKMARK [2][-]{subsection.4.8}{Model Comparisons}{section.4}% 20
-\BOOKMARK [1][-]{section.5}{Limitations}{}% 21
-\BOOKMARK [1][-]{section.6}{Other Data and Future Work}{}% 22
-\BOOKMARK [1][-]{section.7}{Conclusions}{}% 23
+\BOOKMARK [1][-]{section.5}{Using Model and Recommendations}{}% 21
+\BOOKMARK [1][-]{section.6}{Assumptions and Limitations}{}% 22
+\BOOKMARK [1][-]{section.7}{Other Data and Future Work}{}% 23
+\BOOKMARK [1][-]{section.8}{Conclusions}{}% 24
+\BOOKMARK [2][-]{subsection.8.1}{Data Exploration Conclusions}{section.8}% 25
+\BOOKMARK [2][-]{subsection.8.2}{Modeling Conclusions}{section.8}% 26
